@@ -7,7 +7,7 @@ const blogRoutes = express.Router();
 
 blogRoutes.get('/', (req, res) => {
     Blog.find({}, function(err, blogs) {
-            res.send(blogs);
+            res.json(blogs);
         }); 
 });
 
@@ -32,6 +32,7 @@ blogRoutes.post('/comments', (req, res) => {
         blog: req.body.blog
     });
     comment.save();
+
     Blog.findOneAndUpdate({_id: req.body.blog},{$push: {comments: comment}}, (err, data) => {
         if (err) {
             console.log(err);
@@ -40,7 +41,24 @@ blogRoutes.post('/comments', (req, res) => {
     res.json(comment);
 });
 
-blogRoutes.get('/comments/', (req, res) => { 
+blogRoutes.get('/comments/:blogId', (req, res) => { 
+
+    Comment.find({ blog: {$eq: req.params.blogId} }, (err, comments) => {
+        if (err) {  
+            console.log(err);
+        } 
+        res.json(comments);
+    }); 
+});
+
+blogRoutes.delete('/comments/:id', (req, res) => { 
+
+    Comment.deleteOne({ _id: {$eq: req.params.id} }, (err, comments) => {
+        if (err) {  
+            console.log(err);
+        } 
+        res.json({message: "Comment deleted successfully"});
+    }); 
 });
 
 blogRoutes.put('/', (req, res) => {

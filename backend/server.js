@@ -12,7 +12,7 @@ app.use(cors());
 app.use(express.json());
 
 mongoose.connect(process.env.MONGODB, { useNewUrlParser: true, useUnifiedTopology: true }, () => {
-    console.log('connected to MongoDB at ' + process.env.MONGODB);
+    console.log('connected to ' + process.env.MONGODB);
 });
 
 app.use('/blogs', blogRoutes);
