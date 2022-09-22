@@ -1,0 +1,41 @@
+.App {
+ margin-left: 50px;
+ margin-right: 50px;
+}
+
+.header-title {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.nav {
+  display: flex;
+  justify-content: right;
+  background-color: rgb(216, 215, 215);
+}
+
+.nav div {
+  margin: 1rem;
+}
+
+body {
+  background-color: rgb(216, 215, 215);
+}
+
+.container {
+  margin: 1rem;
+  text-align: left;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
