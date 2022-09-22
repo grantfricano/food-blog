@@ -33,11 +33,10 @@ blogRoutes.post('/comments', (req, res) => {
     comment.save();
 
     Blog.findOneAndUpdate({_id: req.body.blog},{$push: {comments: comment}}, (err, data) => {
-        if (err) {
-            console.log(err);
-        }
+        Comment.find({blog: {$eq: req.body.blog} }, (err, comments) => {
+            res.json(comments);
+        }); 
     });
-    res.json(comment);
 });
 
 blogRoutes.get('/comments/:blogId', (req, res) => { 
