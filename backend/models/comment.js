@@ -9,6 +9,6 @@ const commentSchema = new mongoose.Schema ({
 
 // commentSchema.pre('remove', function(next) {
 //     // Remove all the assignment docs that reference the removed person.
-//     this.model('blogSchema').remove({$pullAll: {comments: this._id }}, next);
+//     this.model('Blog').remove({$pullAll: {comments: this._id }}, next);
 // });
 export default mongoose.model('Comment', commentSchema);

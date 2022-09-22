@@ -1,5 +1,4 @@
-import express, { application } from 'express';
-import blog from '../models/blog.js';
+import express from 'express';
 import Blog from '../models/blog.js';
 import Comment from '../models/comment.js';
 
