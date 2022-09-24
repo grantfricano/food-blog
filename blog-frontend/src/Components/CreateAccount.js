@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useNavigate } from 'react';
 
 function CreateAccount() {
     let [username, setUserName] = useState('');
     let [password, setPassword] = useState('');
-
 
     function CreateUser() {
         const request = {

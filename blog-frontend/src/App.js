@@ -1,5 +1,5 @@
 import './App.css';
-import React from'react';
+import React, { useState } from'react';
 import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Blogs from './components/Blogs';
@@ -9,6 +9,14 @@ import Login from './components/Login';
 import CreateAccount from './components/CreateAccount';
 
 function App() {
+  
+  // const [token, setToken] = useState('');
+
+  // if(!token) {
+  //   return <Login setToken={setToken} />
+  // }
+
+
   return (
     <div className="App"> 
       <Navbar />

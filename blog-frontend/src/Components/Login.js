@@ -33,7 +33,7 @@ function Login() {
             <label>Password</label>
             <input type="password" placeholder="Password" onChange={(event) => setPassword(event.target.value)} />
             <br />
-            <button type="submit" onClick={Authenticate}>Submit</button>
+            <button type="submit" onClick={Authenticate}>Login</button>
             <br /><br />
             <Link to='/createaccount'>Create Account </Link>
         </div>
