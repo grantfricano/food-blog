@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
+import PropTypes from 'prop-types';
 
-function Login() {
+function Login( {setToken} ) {
     
     let [username, setUserName] = useState('');
     let [password, setPassword] = useState('');
 
-    let  [token, setToken] = useState('');
+    //let [token, setToken] = useState('');
 
     function Authenticate() {
 
@@ -39,5 +40,9 @@ function Login() {
         </div>
     )
 }
+
+Login.propTypes = {
+    setToken: PropTypes.func.isRequired
+  }
 
 export default Login;
