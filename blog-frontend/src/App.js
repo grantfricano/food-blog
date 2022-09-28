@@ -12,16 +12,17 @@ function App() {
   
     const [token, setToken] = useState('');
 
-    if(!token) {
-      return <Login setToken={setToken} />
-    }
+    // if(!token) {
+    //   return <Login setToken={setToken} />
+    // }
   
   return (
     <div className="App"> 
-      <Navbar />
+      <Navbar token={token} setToken={setToken}/>
       <div className='container'>
       <Routes>
-        <Route path='/' element={<Login /> } />
+        <Route path='/' />
+        <Route path='/login' element={<Login setToken={setToken} />} />
         <Route path='/blogs' element={<Blogs />} />
         <Route path='/newblog' element={<NewBlog />} />
         <Route path='/blog/:id' element={<Blog />} />

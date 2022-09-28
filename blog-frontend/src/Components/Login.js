@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import PropTypes from 'prop-types';
 
 function Login( {setToken} ) {
@@ -22,10 +22,11 @@ function Login( {setToken} ) {
             body: JSON.stringify(loginInfo)
           })
             .then((response) => response.json())
-            .then((data) => {setToken(data.token)})
+            .then((data) => {setToken(data.token)});
+
         }
 
-
+     
     return (
         <div>
             <label>User Name</label>

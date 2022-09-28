@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 function Blogs() {
     
     let [blogs, setBlogs] = useState([]);
-
+    
     useEffect(() => {
         fetch('http://localhost:4100/blogs/')
         .then((response) => response.json())
