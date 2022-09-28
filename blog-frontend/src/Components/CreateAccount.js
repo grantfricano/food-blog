@@ -1,8 +1,11 @@
-import React, { useState, useEffect, useNavigate } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function CreateAccount() {
     let [username, setUserName] = useState('');
     let [password, setPassword] = useState('');
+
+    let navigate = useNavigate();
 
     function CreateUser() {
         const request = {
@@ -16,6 +19,7 @@ function CreateAccount() {
             body: JSON.stringify(request)
           })
             .then((response) => response.json())
+            .then(navigate('/'));
     }
 
     return (
