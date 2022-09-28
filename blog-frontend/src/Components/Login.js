@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { Link, Navigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import PropTypes from 'prop-types';
 
 function Login( {setToken} ) {
     
     let [username, setUserName] = useState('');
     let [password, setPassword] = useState('');
+
+    let navigate = useNavigate();
 
     //let [token, setToken] = useState('');
 
@@ -22,11 +24,10 @@ function Login( {setToken} ) {
             body: JSON.stringify(loginInfo)
           })
             .then((response) => response.json())
-            .then((data) => {setToken(data.token)});
-
+            .then((data) => {setToken(data.token)})
+            .then(navigate('/'));
         }
-
-     
+ 
     return (
         <div>
             <label>User Name</label>
