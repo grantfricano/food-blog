@@ -25,7 +25,7 @@ function App() {
         <Route path='/login' element={<Login setToken={setToken} />} />
         <Route path='/blogs' element={<Blogs />} />
         <Route path='/newblog' element={<NewBlog />} />
-        <Route path='/blog/:id' element={<Blog />} />
+        <Route path='/blog/:id' element={<Blog token={token}/>} />
         <Route path='/createaccount' element={<CreateAccount />} />
       </Routes>
       </div>

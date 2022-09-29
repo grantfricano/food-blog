@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
-function Blog() {
+function Blog( {token} ) {
 
     let { id } = useParams();
     let [comments, setComments] = useState([]);
@@ -25,7 +25,7 @@ function Blog() {
       
           fetch('http://localhost:4100/blogs/comments/', {
             method: 'POST',
-            headers: { 'content-type': 'application/json'},
+            headers: { 'content-type': 'application/json', 'Authorization': token},
             body: JSON.stringify(comment)
           })
             .then((response) => response.json())

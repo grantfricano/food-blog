@@ -1,6 +1,7 @@
 import express from 'express';
 import Blog from '../models/blog.js';
 import Comment from '../models/comment.js';
+import ValidateJWTTokenMiddleware from '../middlewares/validateJWTTokenMiddleware.js';
 
 const blogRoutes = express.Router();
 
@@ -24,7 +25,7 @@ blogRoutes.post('/', (req, res) => {
     res.json(blog);
 });
 
-blogRoutes.post('/comments', (req, res) => { 
+blogRoutes.post('/comments', ValidateJWTTokenMiddleware,(req, res) => { 
     let comment = new Comment({
         author: req.body.author,
         content: req.body.content,

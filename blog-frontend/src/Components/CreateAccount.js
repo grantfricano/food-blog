@@ -19,7 +19,7 @@ function CreateAccount() {
             body: JSON.stringify(request)
           })
             .then((response) => response.json())
-            .then(navigate('/'));
+            .then(navigate('/login'));
     }
 
     return (
