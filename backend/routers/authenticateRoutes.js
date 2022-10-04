@@ -7,10 +7,15 @@ const authenticationRoutes = express.Router();
 authenticationRoutes.post('/', (req, res) => {
 
     User.findOne({username: {$eq: req.body.username}}, (err, user) => {
-        if (err) 
-            res.send({message: 'there was an error'});
+        if (err) return res.send({message: 'there was an error'});
+        
+        if (!user) return res.send({message: 'user not found'});
 
         user.comparePassword(req.body.password, (err, isMatch) => {
+            if(err) {
+                res.send({message: 'invalid password'});
+            }
+            
             if(isMatch) {
                 const payload = {
                     username: req.body.username,
