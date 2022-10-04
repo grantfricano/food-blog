@@ -7,6 +7,8 @@ import NewBlog from './components/NewBlog';
 import Blog from './components/Blog';
 import Login from './components/Login';
 import CreateAccount from './components/CreateAccount';
+import MyProfile from './components/MyProfile';
+import UserProvider from './contexts/UserContext';
 
 function App() {
   
@@ -17,6 +19,7 @@ function App() {
     // }
   
   return (
+    <UserProvider>
     <div className="App"> 
       <Navbar token={token} setToken={setToken}/>
       <div className='container'>
@@ -27,9 +30,11 @@ function App() {
         <Route path='/newblog' element={<NewBlog />} />
         <Route path='/blog/:id' element={<Blog token={token}/>} />
         <Route path='/createaccount' element={<CreateAccount />} />
+        <Route path='/myprofile' element={<MyProfile token={token} />} />
       </Routes>
       </div>
     </div>
+    </UserProvider>
   );
 }
 

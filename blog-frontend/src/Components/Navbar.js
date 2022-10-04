@@ -2,7 +2,7 @@
 import { Link } from "react-router-dom";
 
 function Navbar( {token}, {setToken} ) {
-  
+
   function Logout() {
     setToken(null);
   }
@@ -12,7 +12,7 @@ function Navbar( {token}, {setToken} ) {
         <div className='navbar-name'><Link to='/'>Food Blog</Link></div>
         <div><Link to='/blogs'>Blogs</Link></div>
         <div><Link to='/newblog'>New Post</Link></div>
-        {token ? ( <div><Link to='/' onClick={Logout} >Log Out</Link></div>) : (<div><Link to='/login'>Log In</Link></div>)  } 
+        {token ? ( <div><Link to='/myprofile' /* onClick={Logout}*/ >My Profile</Link></div>) : (<div><Link to='/login'>Log In</Link></div>)  } 
       </nav>    
   )
 }
