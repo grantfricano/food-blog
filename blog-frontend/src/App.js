@@ -20,20 +20,22 @@ function App() {
   
   return (
     <UserProvider>
-    <div className="App"> 
-      <Navbar token={token} setToken={setToken}/>
-      <div className='container'>
-      <Routes>
-        <Route path='/' />
-        <Route path='/login' element={<Login setToken={setToken} />} />
-        <Route path='/blogs' element={<Blogs />} />
-        <Route path='/newblog' element={<NewBlog />} />
-        <Route path='/blog/:id' element={<Blog token={token}/>} />
-        <Route path='/createaccount' element={<CreateAccount />} />
-        <Route path='/myprofile' element={<MyProfile token={token} />} />
-      </Routes>
+
+      <div className="App"> 
+        <Navbar token={token} setToken={setToken}/>
+        <div className='container'>
+        <Routes>
+          <Route path='/' />
+          <Route path='/login' element={<Login setToken={setToken} />} />
+          <Route path='/blogs' element={<Blogs />} />
+          <Route path='/newblog' element={<NewBlog />} />
+          <Route path='/blog/:id' element={<Blog token={token}/>} />
+          <Route path='/createaccount' element={<CreateAccount />} />
+          <Route path='/myprofile' element={<MyProfile token={token} />} />
+        </Routes>
+        </div>
       </div>
-    </div>
+
     </UserProvider>
   );
 }

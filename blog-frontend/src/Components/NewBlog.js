@@ -1,4 +1,5 @@
 import React, { useState, useEffect} from 'react';
+import { useNavigate } from 'react-router-dom';
 
 
 function NewBlog() {
@@ -6,6 +7,8 @@ function NewBlog() {
     let [blogAuthor, setBlogAuthor] = useState('');
     let [blogBody, setBlogBody] = useState('');
     let [data, setBlog] = useState('');
+
+    const navigate = useNavigate();
 
     function SubmitBlog(){
         const newBlog = {
@@ -20,6 +23,7 @@ function NewBlog() {
           })
             .then((response) => response.json())
             .then((data) => {setBlog(data)})
+            .then(navigate('/blogs'))
             
     }
 
