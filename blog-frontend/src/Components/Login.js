@@ -1,16 +1,18 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { Link, useNavigate } from "react-router-dom";
 import PropTypes from 'prop-types';
-import UserContext from '../contexts/UserContext.js';
+import { UserContext } from '../contexts/UserContext.js';
 
-function Login( {setToken} ) {
+function Login() {
     
     let [username, setUserName] = useState('');
     let [password, setPassword] = useState('');
+    
+    const {token, setToken} = useContext(UserContext);
+    const {user, setUser} = useContext(UserContext);
 
     let navigate = useNavigate();
 
-    //let [token, setToken] = useState('');
 
     function Authenticate() {
 
@@ -18,6 +20,8 @@ function Login( {setToken} ) {
             username: username,
             password: password
         }
+
+        setUser(username);
 
         fetch('http://localhost:4100/token', {
             method: 'POST',

@@ -1,8 +1,10 @@
-
+import { UserContext } from '../contexts/UserContext';
 import { Link } from "react-router-dom";
+import { useContext } from 'react';
 
-function Navbar( {token}, {setToken} ) {
+function Navbar() {
 
+  const {token, setToken} = useContext(UserContext);
   function Logout() {
     setToken(null);
   }

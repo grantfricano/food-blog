@@ -1,12 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router-dom";
+import { UserContext } from '../contexts/UserContext';
 
-function Blog( {token} ) {
+function Blog() {
 
     let { id } = useParams();
     let [comments, setComments] = useState([]);
     let [author, setAuthor] = useState('');
     let [content, setContent] = useState('');
+    const {token} = useContext(UserContext);
 
     useEffect(() => {
         fetch('http://localhost:4100/blogs/comments/' + id)

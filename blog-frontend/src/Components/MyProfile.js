@@ -1,15 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
+import { UserContext } from '../contexts/UserContext'
 
-function MyProfile( {token} ) {
+function MyProfile() {
 
-    
-    function LoadDetails() {
+    const {user, setUser} = useContext(UserContext);
 
-    }
     return (
         <div>
             <label>Name </label>
-            <input type="text" name="name" readOnly></input>
+            <input type="text" name="name" placeholder={user} readOnly></input>
         </div>
     )
 }
