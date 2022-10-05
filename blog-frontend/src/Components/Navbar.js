@@ -9,6 +9,7 @@ function Navbar() {
 
   function Logout() {
     setToken(null);
+    localStorage.clear();
   }
 
   useEffect(() => {
