@@ -5,6 +5,8 @@ import { useContext } from 'react';
 function Navbar() {
 
   const {token, setToken} = useContext(UserContext);
+  const {user} = useContext(UserContext);
+
   function Logout() {
     setToken(null);
   }
@@ -15,7 +17,7 @@ function Navbar() {
         <div><Link to='/blogs'>Blogs</Link></div>
         <div><Link to='/newblog'>New Post</Link></div>
         {token ? ( <div><Link to='/myprofile'>My Profile</Link></div>) : (<div><Link to='/login'>Log In</Link></div>)  } 
-        {token ? ( <div><Link to='/' onClick={Logout}>Logout</Link></div>) : ''}
+        {token ? ( <div><Link to='/' onClick={Logout}>Logout ({user})</Link></div>) : ''}
       </nav>    
   )
 }

@@ -6,9 +6,10 @@ function Blog() {
 
     let { id } = useParams();
     let [comments, setComments] = useState([]);
-    let [author, setAuthor] = useState('');
+ 
     let [content, setContent] = useState('');
-    const {token} = useContext(UserContext);
+
+    const {token, user} = useContext(UserContext);
 
     useEffect(() => {
         fetch('http://localhost:4100/blogs/comments/' + id)
@@ -20,7 +21,7 @@ function Blog() {
     function submitComment() {
 
         const comment = {
-            author: author,
+            author: user,
             content: content,
             blog: id
           }
@@ -38,8 +39,6 @@ function Blog() {
         <>
         <h1>{id}</h1>
 
-        <input type="text" id="author" placeholder="Author Name" onChange={(event) => setAuthor(event.target.value)}/>
-        <br />
         <input type="text" id="newComment" placeholder="Comment" onChange={(event) => setContent(event.target.value)} />
         <br />
         <button type="submit" onClick={submitComment}>Save</button>

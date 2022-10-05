@@ -21,8 +21,6 @@ function Login() {
             password: password
         }
 
-        setUser(username);
-
         fetch('http://localhost:4100/token', {
             method: 'POST',
             headers: { 'content-type': 'application/json'},
@@ -30,7 +28,8 @@ function Login() {
           })
             .then((response) => response.json())
             .then((data) => {setToken(data.token)})
-            .then(navigate('/'));
+            .then(navigate('/'))
+            .then(setUser(username));
         }
  
     return (

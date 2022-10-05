@@ -36,7 +36,7 @@ blogRoutes.post('/comments', ValidateJWTTokenMiddleware,(req, res) => {
     Blog.findOneAndUpdate({_id: req.body.blog},{$push: {comments: comment}}, (err, data) => {
         Comment.find({blog: {$eq: req.body.blog} }, (err, comments) => {
             res.json(comments);
-        }); 
+        }).sort({ createdAt: -1 }); 
     });
 });
 
@@ -47,7 +47,7 @@ blogRoutes.get('/comments/:blogId', (req, res) => {
             console.log(err);
         } 
         res.json(comments);
-    }); 
+    }).sort({ createdAt: -1 }); 
 });
 
 blogRoutes.delete('/comments/:id', (req, res) => { 
