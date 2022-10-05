@@ -7,12 +7,11 @@ function Login() {
     
     let [username, setUserName] = useState('');
     let [password, setPassword] = useState('');
+    let [invalidPassword, setInvalidPassword] = useState(false);
     
-    const {token, setToken} = useContext(UserContext);
-    const {user, setUser} = useContext(UserContext);
-
+    const {setUser, setToken} = useContext(UserContext);
+    
     let navigate = useNavigate();
-
 
     function Authenticate() {
 
@@ -27,9 +26,16 @@ function Login() {
             body: JSON.stringify(loginInfo)
           })
             .then((response) => response.json())
-            .then((data) => {setToken(data.token)})
-            .then(navigate('/'))
-            .then(setUser(username));
+            .then((data) => {
+                if (data.message) {
+                    setInvalidPassword(true);
+                    return;
+                } else if (data.token) {
+                    setToken(data.token);
+                    setUser(username);
+                    navigate('/');
+                }
+            })
         }
  
     return (
@@ -40,6 +46,7 @@ function Login() {
             <label>Password</label>
             <input type="password" placeholder="Password" onChange={(event) => setPassword(event.target.value)} />
             <br />
+            {invalidPassword ? <label>Invalid Password<br/></label> : ''}
             <button type="submit" onClick={Authenticate}>Login</button>
             <br /><br />
             <Link to='/createaccount'>Create Account </Link>
