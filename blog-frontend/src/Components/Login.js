@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { Link, useNavigate } from "react-router-dom";
-import PropTypes from 'prop-types';
+
 import { UserContext } from '../contexts/UserContext.js';
 
 function Login() {
@@ -36,7 +36,7 @@ function Login() {
                     navigate('/');
                 }
             })
-        }
+    }
  
     return (
         <div>
@@ -54,8 +54,6 @@ function Login() {
     )
 }
 
-Login.propTypes = {
-    setToken: PropTypes.func.isRequired
-  }
+
 
 export default Login;
