@@ -1,15 +1,28 @@
 import { UserContext } from '../contexts/UserContext';
 import { Link } from "react-router-dom";
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 
 function Navbar() {
 
   const {token, setToken} = useContext(UserContext);
-  const {user} = useContext(UserContext);
+  const {user, setUser} = useContext(UserContext);
 
   function Logout() {
     setToken(null);
   }
+
+  useEffect(() => {
+    const token = JSON.parse(localStorage.getItem('token'));
+    if (token) {
+     setToken(token);
+    }
+
+    const username = JSON.parse(localStorage.getItem('username'));
+    if (username) {
+     setUser(username);
+    }
+
+  }, []);
   
   return (
       <nav className="nav">

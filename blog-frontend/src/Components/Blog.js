@@ -24,8 +24,7 @@ function Blog() {
             author: user,
             content: content,
             blog: id
-          }
-      
+        }
           fetch('http://localhost:4100/blogs/comments/', {
             method: 'POST',
             headers: { 'content-type': 'application/json', 'Authorization': token},
