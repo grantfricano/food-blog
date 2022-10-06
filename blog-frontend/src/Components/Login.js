@@ -20,7 +20,7 @@ function Login() {
             password: password
         }
 
-        fetch('http://localhost:4100/token', {
+        fetch(process.env.REACT_APP_API_URL + '/token', {
             method: 'POST',
             headers: { 'content-type': 'application/json'},
             body: JSON.stringify(loginInfo)

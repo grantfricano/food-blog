@@ -16,7 +16,7 @@ function NewBlog() {
             author: blogAuthor,
             body: blogBody
           }
-          fetch('http://localhost:4100/blogs/', {
+          fetch(process.env.REACT_APP_API_URL + '/blogs/', {
             method: 'POST',
             headers: { 'content-type': 'application/json'},
             body: JSON.stringify(newBlog)

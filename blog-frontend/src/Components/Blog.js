@@ -25,7 +25,7 @@ function Blog() {
             content: content,
             blog: id
         }
-          fetch('http://localhost:4100/blogs/comments/', {
+          fetch(process.env.REACT_APP_API_URL + '/blogs/comments/', {
             method: 'POST',
             headers: { 'content-type': 'application/json', 'Authorization': token},
             body: JSON.stringify(comment)

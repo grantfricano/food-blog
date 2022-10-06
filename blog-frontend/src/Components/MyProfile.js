@@ -10,6 +10,7 @@ function MyProfile() {
             <label>Name </label>
             <input type="text" name="name" placeholder={user} readOnly></input>
         </div>
+        
     )
 }
 

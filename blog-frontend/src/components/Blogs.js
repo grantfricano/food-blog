@@ -6,7 +6,7 @@ function Blogs() {
     let [blogs, setBlogs] = useState([]);
     
     useEffect(() => {
-        fetch('http://localhost:4100/blogs/')
+        fetch(process.env.REACT_APP_API_URL + '/blogs/')
         .then((response) => response.json())
         .then((data) => {setBlogs(data)});
 

@@ -22,7 +22,6 @@ function Navbar() {
     if (username) {
      setUser(username);
     }
-
   }, []);
   
   return (

@@ -13,7 +13,7 @@ function CreateAccount() {
             password: password
           }
 
-          fetch('http://localhost:4100/accounts/', {
+          fetch(process.env.REACT_APP_API_URL + '/accounts/', {
             method: 'POST',
             headers: { 'content-type': 'application/json'},
             body: JSON.stringify(request)
