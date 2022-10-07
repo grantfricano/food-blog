@@ -31,7 +31,6 @@ function Login() {
                 if (data.message == 'invalid password') {
                     setInvalidUsername(false);
                     setInvalidPassword(true);
-
                 }
                 else if (data.message == 'user not found') {
                     setInvalidPassword(false);
