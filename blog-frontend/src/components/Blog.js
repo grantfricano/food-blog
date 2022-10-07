@@ -10,12 +10,13 @@ function Blog() {
     let [content, setContent] = useState('');
     const {token, user} = useContext(UserContext);
 
+
     useEffect(() => {
         fetch(process.env.REACT_APP_API_URL + '/blogs/comments/' + id)
         .then((response) => response.json())
         .then((data) => {setComments(data)});
 
-    },[comments]);
+    },[]);
 
     function submitComment() {
 
@@ -39,6 +40,7 @@ function Blog() {
         headers: { 'content-type': 'application/json', 'Authorization': token},
         body: JSON.stringify()
       })
+
     }
 
     return (
