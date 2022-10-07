@@ -8,7 +8,6 @@ function Blog() {
     let [comments, setComments] = useState([]);
 
     let [content, setContent] = useState('');
-
     const {token, user} = useContext(UserContext);
 
     useEffect(() => {
@@ -16,7 +15,7 @@ function Blog() {
         .then((response) => response.json())
         .then((data) => {setComments(data)});
 
-    },[]);
+    },[comments]);
 
     function submitComment() {
 
@@ -40,7 +39,6 @@ function Blog() {
         headers: { 'content-type': 'application/json', 'Authorization': token},
         body: JSON.stringify()
       })
-
     }
 
     return (
