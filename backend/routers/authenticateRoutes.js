@@ -7,13 +7,13 @@ const authenticationRoutes = express.Router();
 authenticationRoutes.post('/', (req, res) => {
 
     User.findOne({username: {$eq: req.body.username}}, (err, user) => {
-        if (err) return res.send({message: 'there was an error'});
+        if (err) return res.send({message: 'there was an error1'});
         
         if (!user) return res.send({message: 'user not found'});
 
         user.comparePassword(req.body.password, (err, isMatch) => {
             if(err) {
-                res.send({message: 'invalid password'});
+                res.send({message: 'there was an error2'});
             }
             
             if(isMatch) {
@@ -25,7 +25,7 @@ authenticationRoutes.post('/', (req, res) => {
                 const token = jwt.sign(payload, process.env.JWT_SECRET_KEY);
                 res.send({token: token});
             } else {
-                res.send({message: 'there was an error'});
+                res.send({message: 'invalid password'});
             } 
         });
     });
