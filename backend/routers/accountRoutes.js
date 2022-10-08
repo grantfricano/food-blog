@@ -27,7 +27,7 @@ accountsRoutes.post('/resetpassword', (req, res) => {
             pass: ''
         }
     });
-console.log('listen up here ' + req.body.to);
+
     let mailOptions = {
         from: '"Krunal Lathiya" <xx@gmail.com>', // sender address
         to: req.body.to, // list of receivers
