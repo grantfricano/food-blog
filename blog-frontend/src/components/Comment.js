@@ -34,6 +34,7 @@ function Comment( {blogId} ) {
     }
 
     function deleteComment(commentId) {
+      
       fetch(process.env.REACT_APP_API_URL + '/blogs/comments/' + commentId, {
         method: 'DELETE',
         headers: { 'content-type': 'application/json', 'Authorization': token},

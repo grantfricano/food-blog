@@ -58,7 +58,8 @@ function Login() {
             {invalidPassword ? <label>Invalid Password<br/></label> : ''}
             <button type="submit" onClick={Authenticate}>Login</button>
             <br /><br />
-            <Link to='/createaccount'>Create Account </Link>
+            <Link to='/createaccount'>Create Account </Link><br />
+            <Link to='/forgotpassword'>Forgot Password</Link>
         </div>
     )
 }

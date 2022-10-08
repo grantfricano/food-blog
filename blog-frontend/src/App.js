@@ -6,6 +6,7 @@ import Blogs from './components/Blogs';
 import NewBlog from './components/NewBlog';
 import Blog from './components/Blog';
 import Login from './components/Login';
+import ForgotPassword from './components/ForgotPassword';
 import CreateAccount from './components/CreateAccount';
 import MyProfile from './components/MyProfile';
 import { UserContext } from './contexts/UserContext';
@@ -29,6 +30,7 @@ function App() {
           <Route path='/blog/:id' element={<Blog />} />
           <Route path='/createaccount' element={<CreateAccount />} />
           <Route path='/myprofile' element={<MyProfile />} />
+          <Route path='forgotpassword' element={<ForgotPassword />} />
         </Routes>
         </div>
       </div>
