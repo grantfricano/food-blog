@@ -2,6 +2,8 @@ import express from 'express';
 import User from '../models/user.js';
 import nodemailer from 'nodemailer';
 import uniqueUsernameCheckMiddleware from '../middlewares/uniqueUsernameCheckMiddleware.js';
+import crypto from 'crypto';
+import user from '../models/user.js';
 
 const accountsRoutes = express.Router();
 
@@ -16,33 +18,59 @@ accountsRoutes.post('/', uniqueUsernameCheckMiddleware, (req, res) => {
     res.json({message: "User created successfully"});
 
 });
-
 accountsRoutes.post('/resetpassword', (req, res) => {
-    let transporter = nodemailer.createTransport({
-        host: 'smtp.gmail.com',
-        port: 465,
-        secure: true,
-        auth: {
-            user: 'grant.fricano@gmail.com',
-            pass: ''
-        }
-    });
 
-    let mailOptions = {
-        from: '"Krunal Lathiya" <xx@gmail.com>', // sender address
-        to: req.body.to, // list of receivers
-        subject: 'test', // Subject line
-        text: 'test', // plain text body
-        html: '<b>NodeJS Email Tutorial</b>' // html body
-    };
+    const resetPasswordToken = crypto
+        .createHash('sha256')
+        .update(req.body.resetToken)
+        .digest('hex');
 
-    transporter.sendMail(mailOptions, (error, info) => {
-        if (error) {
-            return console.log(error);
-        }
-        console.log('Message %s sent: %s', info.messageId, info.response);
-            res.render('index');
+
+    User.findOne( {resetPasswordToken, resetPasswordExpire: {$gt: Date.now()}}, (err, user) => {
+        if (!user) return res.send({message: 'user not found'});
+        
+        user.password = req.body.newPassword;
+        user.resetPasswordToken = undefined;
+        user.resetPasswordExpire = undefined;
+        user.save();
+    })
+});
+
+accountsRoutes.post('/forgotpassword', (req, res) => {
+
+    User.findOne( {username: req.body.username}, (err, user) =>{
+        if (!user) return res.send({message: 'user not found'});
+
+        const resetToken = user.getResetPasswordToken();
+        user.save();
+        const resetUrl = `http://localhost:3000/resetpassword/${resetToken}`;
+        const message = `${resetUrl}`;
+
+        let transporter = nodemailer.createTransport({
+            host: 'smtp.gmail.com',
+            port: 465,
+            secure: true,
+            auth: {
+                user: 'grant.fricano@gmail.com',
+                pass: 'lhwcspsyqgwknwce'
+            }
         });
+
+        let mailOptions = {
+            from: '"Krunal Lathiya" <xx@gmail.com>', // sender address
+            to: req.body.to, // list of receivers
+            subject: 'Password Reset', // Subject line
+            text: message 
+        };
+
+        transporter.sendMail(mailOptions, (error, info) => {
+            if (error) {
+                return console.log(error);
+            }
+            console.log('Message %s sent: %s', info.messageId, info.response);
+                res.render('index');
+            });
+    })
 });
 
 

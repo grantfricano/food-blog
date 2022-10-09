@@ -9,6 +9,7 @@ import Login from './components/Login';
 import ForgotPassword from './components/ForgotPassword';
 import CreateAccount from './components/CreateAccount';
 import MyProfile from './components/MyProfile';
+import ResetPassword from './components/ResetPassword';
 import { UserContext } from './contexts/UserContext';
 
 function App() {
@@ -30,7 +31,8 @@ function App() {
           <Route path='/blog/:id' element={<Blog />} />
           <Route path='/createaccount' element={<CreateAccount />} />
           <Route path='/myprofile' element={<MyProfile />} />
-          <Route path='forgotpassword' element={<ForgotPassword />} />
+          <Route path='/forgotpassword' element={<ForgotPassword />} />
+          <Route path='/resetpassword/:resetToken' element={<ResetPassword />} />
         </Routes>
         </div>
       </div>
