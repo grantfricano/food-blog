@@ -52,7 +52,7 @@ accountsRoutes.post('/forgotpassword', (req, res) => {
             secure: true,
             auth: {
                 user: 'grant.fricano@gmail.com',
-                pass: 'lhwcspsyqgwknwce'
+                pass: ''
             }
         });
 
