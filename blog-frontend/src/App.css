@@ -6,7 +6,7 @@
   font-family: 'bebas-neue-by-fontfabric' !important;
   font-size: 30pt;
   font-weight: 250;
-  margin-right: 50%;
+  margin-right: 40%;
   white-space: nowrap;
   
 }
@@ -77,6 +77,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  
 }
 
 code {

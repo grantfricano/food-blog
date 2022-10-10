@@ -47,9 +47,10 @@ function Comment( {blogId} ) {
 
     return (
         <>
-        <input type="text" id="newComment" placeholder="Comment" onChange={(event) => setContent(event.target.value)} />
+
+        {token ? <input type="text" id="newComment" placeholder="Comment" onChange={(event) => setContent(event.target.value)} /> : ''}
         <br />
-        <button type="submit" onClick={submitComment}>Save</button>
+        {token ? <button type="submit" onClick={submitComment}>Save</button> : ''}
         <br /><br /><br />
         <table border='1'>
         <tr>
@@ -66,6 +67,7 @@ function Comment( {blogId} ) {
           ))
         }
       </table>
+
       </>
     )
 }
