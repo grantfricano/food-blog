@@ -29,9 +29,10 @@ function ForgotPassword() {
         <>
             <label>Email Address</label>
             <input type="text" placeholder='email address' onChange={(event) => setEmailAddress(event.target.value)}/>
-            
+            <br/>
             <label>Username</label>
             <input type="text" placeholder='username' onChange={(event) => setUsername(event.target.value)}/>
+            <br /><br />
             <button type='submit' onClick={Reset} >Submit</button>
         </>
     )

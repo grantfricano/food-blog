@@ -4,9 +4,9 @@ import { useNavigate, useParams } from 'react-router-dom'
 function ResetPassword() {
     
     let [newPassword, setNewPassword] = useState('');
-    let navigate = useNavigate();
-
     let { resetToken } = useParams();
+
+    let navigate = useNavigate();
 
     function submitNewPassword() {
 

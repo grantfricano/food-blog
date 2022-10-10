@@ -2,19 +2,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 
 .navbar-name {
-  color: rgb(250, 250, 114) !important;
+  color: rgb(0, 0, 0) !important;
   font-family: 'bebas-neue-by-fontfabric' !important;
-  font-size: 80pt;
-  font-weight: 700;
-}
-
-.navbar-lastname {
-  color: rgb(233, 231, 231) !important;
-  font-family: 'bebas-neue-by-fontfabric' !important;
-  font-size: 64pt;
-  font-weight: 300; 
-  position:relative;
-  top:-65px; 
+  font-size: 30pt;
+  font-weight: 250;
+  margin-right: 50%;
+  white-space: nowrap;
+  
 }
 
 a:link { 
@@ -30,23 +24,36 @@ a:link {
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
+
 .nav {
   display: flex;
-  justify-content: right;
-  background-color: rgb(242, 241, 241);
+  justify-content: left;
+  background-color: rgb(255, 255, 255);
 }
 
-.nav div {  
-  margin: 1rem;
-}
 
 body {
-  background-color: rgb(242, 241, 241);
+  background-color: rgb(255, 255, 255);
+}
+
+.sticky {
+  position: sticky;
+  right: 0;
+  display: flex;
+  white-space: nowrap;
+  font-family: 'bebas-neue-by-fontfabric' !important;
+  font-size: 20pt;
+  font-weight: 100;
 }
 
 .container {
+  display: flex;
   margin: 1rem;
-  text-align: left;
+
+}
+
+.container div {
+  padding: 10px;
 }
 
 body {

@@ -43,6 +43,7 @@ accountsRoutes.post('/forgotpassword', (req, res) => {
 
         const resetToken = user.getResetPasswordToken();
         user.save();
+        
         const resetUrl = `http://localhost:3000/resetpassword/${resetToken}`;
         const message = `${resetUrl}`;
 
@@ -52,7 +53,7 @@ accountsRoutes.post('/forgotpassword', (req, res) => {
             secure: true,
             auth: {
                 user: 'grant.fricano@gmail.com',
-                pass: ''
+                pass: 'lhwcspsyqgwknwce'
             }
         });
 
