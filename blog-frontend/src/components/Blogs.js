@@ -26,7 +26,7 @@ function Blogs() {
           blogs.map((blog) => ( 
             <tr>
               <td><Link to={{
-                    pathname: `/blog/${blog._id}`,
+                    pathname: `/blog/${blog._id}/${blog.title}`,
                     state: { blog }
                 }}>{blog.title}</Link></td>
               <td>{blog.author}</td>

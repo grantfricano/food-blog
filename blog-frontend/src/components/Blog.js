@@ -4,11 +4,11 @@ import Comment from './Comment';
 
 function Blog() {
 
-    let { id } = useParams();
+    let { id, title } = useParams();
 
     return (
         <>
-        <h1>{id}</h1>
+        <h1>{title}</h1>
         <Comment blogId={id} />
       </>
     )
