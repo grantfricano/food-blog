@@ -31,6 +31,20 @@ a:link {
   background-color: rgb(255, 255, 255);
 }
 
+table {
+  border: none;
+}
+
+th {
+  border:none;
+  font-family:'Open Sans', sans-serif;
+  text-align: left;;
+}
+
+td {
+  border:none;
+  font-family:'Open Sans', sans-serif;
+}
 
 body {
   background-color: rgb(255, 255, 255);
@@ -41,8 +55,8 @@ body {
   right: 0;
   display: flex;
   white-space: nowrap;
-  font-family: 'bebas-neue-by-fontfabric' !important;
-  font-size: 20pt;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 12pt;
   font-weight: 100;
 }
 

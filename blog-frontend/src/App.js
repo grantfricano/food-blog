@@ -22,7 +22,7 @@ function App() {
 
       <div className="App"> 
         <Navbar />
-        <div className='container'>
+
         <Routes>
           <Route path='/' />
           <Route path='/login' element={<Login />} />
@@ -34,7 +34,7 @@ function App() {
           <Route path='/forgotpassword' element={<ForgotPassword />} />
           <Route path='/resetpassword/:resetToken' element={<ResetPassword />} />
         </Routes>
-        </div>
+
       </div>
 
     </UserContext.Provider>
