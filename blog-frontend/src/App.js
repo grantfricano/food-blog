@@ -1,7 +1,7 @@
 import './App.css';
 import React, { useState, useContext } from'react';
 import { Routes, Route } from 'react-router-dom';
-import Navbar from './components/Navbar';
+import Navbar from './components/Navbar/Navbar';
 import Blogs from './components/Blogs';
 import NewBlog from './components/NewBlog';
 import Blog from './components/Blog';
