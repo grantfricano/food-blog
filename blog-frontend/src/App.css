@@ -1,6 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 
+@font-face {
+  font-family: "Kirsty";
+  src: local("kirstyrg.otf"),
+   url("./fonts/kirsty/kirstyrg.otf") format("opentype");
 
+  }
+
+.font-face-gm {
+  font-family: "Kirsty";
+}
 /* * {
   background: #000 !important;
   color: #0f0 !important;

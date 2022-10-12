@@ -11,6 +11,7 @@ import CreateAccount from './components/CreateAccount';
 import MyProfile from './components/MyProfile';
 import ResetPassword from './components/ResetPassword';
 import { UserContext } from './contexts/UserContext';
+import './fonts/kirsty/kirstybdit.otf';
 
 function App() {
   
