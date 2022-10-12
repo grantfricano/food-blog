@@ -30,7 +30,7 @@ function Navbar() {
   
   return (
       <nav className="navbar">
-          <h1 className='navbar-name'><Link to='/'>Something With Ginger<i className='fab fa-react'></i></Link></h1>
+          <div className='navbar-name'><Link to='/'>Things With Ginger<i className='fab fa-react'></i></Link></div>
           <div className='menu-icon' onClick={() => setMenuClicked(!menuClicked)}>
             <i className={menuClicked ? 'fas fa-times' : 'fas fa-bars'}></i>
           </div>
