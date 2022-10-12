@@ -12,6 +12,15 @@
     url("./fonts/grenadier/GrenadierNF.ttf") format("truetype");
   }
 
+@font-face {
+  font-family: "Groovy";
+  src: local("littlegroovydemo.ttf"),
+    url("./fonts/littlegroovy/littlegroovydemo.ttf") format("truetype");
+  }
+
+.font-face-groovy {
+  font-family: "Groovy";
+}
 .font-face-gren {
   font-family: "Grenadier";
 }
