@@ -4,9 +4,17 @@
   font-family: "Kirsty";
   src: local("kirstyrg.otf"),
    url("./fonts/kirsty/kirstyrg.otf") format("opentype");
-
   }
 
+@font-face {
+  font-family: "Grenadier";
+  src: local("GrenadierNF.ttf"),
+    url("./fonts/grenadier/GrenadierNF.ttf") format("truetype");
+  }
+
+.font-face-gren {
+  font-family: "Grenadier";
+}
 .font-face-gm {
   font-family: "Kirsty";
 }
