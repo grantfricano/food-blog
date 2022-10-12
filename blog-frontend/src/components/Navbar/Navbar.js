@@ -35,10 +35,10 @@ function Navbar() {
             <i className={menuClicked ? 'fas fa-times' : 'fas fa-bars'}></i>
           </div>
           <ul className={menuClicked ? 'nav-menu active': 'nav-menu'}>
-            <li className='nav-links'><Link to='/blogs'>Blogs</Link></li>
-            <li className='nav-links'><Link to='/newblog'>New Post</Link></li>
-            {token ? ( <li className='nav-links'><Link to='/myprofile'>My Profile</Link></li>) : (<li className='nav-links'><Link to='/login'>Log In</Link></li>)  } 
-            {token ? ( <li className='nav-links'><Link to='/' onClick={Logout}>Logout ({user})</Link></li>) : ''}
+            <li className='nav-links' onClick={() => setMenuClicked(!menuClicked)}><Link to='/blogs'>Blogs</Link></li>
+            <li className='nav-links' onClick={() => setMenuClicked(!menuClicked)}><Link to='/newblog'>New Post</Link></li>
+            {token ? ( <li className='nav-links' onClick={() => setMenuClicked(!menuClicked)}><Link to='/myprofile'>My Profile</Link></li>) : (<li className='nav-links' onClick={() => setMenuClicked(!menuClicked)}><Link to='/login'>Log In</Link></li>)  } 
+            {token ? ( <li className='nav-links' onClick={() => setMenuClicked(!menuClicked)}><Link to='/' onClick={Logout}>Logout ({user})</Link></li>) : ''}
           </ul>
       </nav>    
   )
