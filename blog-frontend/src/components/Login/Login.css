@@ -1,5 +1,6 @@
 .login-box {
     text-align: center;
+
 }
 
 .form-box{
@@ -13,12 +14,17 @@
     width: 30vw;
     z-index: 1;
     margin: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
   }
 
   .show {
     display: block;
-    transition: 800ms;
+    transition: 500ms;
     opacity: 1;
+    position: fixed;
+    left: 50%;
+    transform: translate(-50%, 0);
   }
   
   .show.active {

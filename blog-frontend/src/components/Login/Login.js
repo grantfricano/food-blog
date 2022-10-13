@@ -1,10 +1,10 @@
-import React, { useState, useEffect, useContext } from 'react';
-import { Link, useNavigate } from "react-router-dom";
+import React, { useState, useContext } from 'react';
+import { Link } from "react-router-dom";
 import './Login.css';
 
 import { UserContext } from '../../contexts/UserContext.js';
 
-function Login( {isShowLogin}) {
+function Login( {isShowLogin, setIsShowLogin}) {
     
     let [username, setUserName] = useState('');
     let [password, setPassword] = useState('');
@@ -12,8 +12,6 @@ function Login( {isShowLogin}) {
     let [invalidUsername, setInvalidUsername] = useState(false);
     
     const {setUser, setToken} = useContext(UserContext);
-    
-    let navigate = useNavigate();
 
     function Authenticate() {
 
@@ -42,6 +40,7 @@ function Login( {isShowLogin}) {
                     setUser(username);
                     localStorage.setItem('token', JSON.stringify(data.token));
                     localStorage.setItem('username', JSON.stringify(username));
+                    setIsShowLogin(false);
                 }
             })
     }
@@ -51,10 +50,12 @@ function Login( {isShowLogin}) {
             <div className='login-box'>
                 <div className='form-box solid'>
                     <label>User Name</label>
+                    <br />
                     <input type="text" placeholder="Username" onChange={(event) => setUserName(event.target.value)}/>
                     <br />
                     {invalidUsername ? <label>Invalid Username<br/></label> : ''}
                     <label>Password</label>
+                    <br />
                     <input type="password" placeholder="Password" onChange={(event) => setPassword(event.target.value)} />
                     <br />
                     {invalidPassword ? <label>Invalid Password<br/></label> : ''}
