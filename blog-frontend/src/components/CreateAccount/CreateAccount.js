@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 
-function CreateAccount( {isCreateAccount, setIsCreateAccount}) {
+function CreateAccount( {isCreateAccount, setIsCreateAccount, setIsShowLogin}) {
     let [username, setUserName] = useState('');
     let [password, setPassword] = useState('');
     let [uniqueName, setUniqueName] = useState(true);
@@ -27,8 +27,9 @@ function CreateAccount( {isCreateAccount, setIsCreateAccount}) {
                  return;
               } 
                 setUniqueName(true);
-                navigate('/login')
-              
+                setIsCreateAccount(false);
+                setIsShowLogin(true);
+                          
           })
             //.then(navigate('/login'));
     }

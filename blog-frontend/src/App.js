@@ -35,14 +35,13 @@ function App() {
         <Navbar handleLoginClick={handleLoginClick} setIsCreateAccount={setIsCreateAccount}/>
         
         <Login isShowLogin={isShowLogin} setIsShowLogin={setIsShowLogin} setIsCreateAccount={setIsCreateAccount}/>
-        <CreateAccount isCreateAccount={isCreateAccount} setIsCreateAccount={setIsCreateAccount} />
+        <CreateAccount isCreateAccount={isCreateAccount} setIsCreateAccount={setIsCreateAccount} setIsShowLogin={setIsShowLogin}/>
         
         <Routes>
           <Route path='/' />
           <Route path='/blogs' element={<Blogs />} />
           <Route path='/newblog' element={<NewBlog />} />
           <Route path='/blog/:id/:title' element={<Blog />} />
-          {/* <Route path='/createaccount' element={<CreateAccount />} /> */}
           <Route path='/myprofile' element={<MyProfile />} />
           <Route path='/forgotpassword' element={<ForgotPassword />} />
           <Route path='/resetpassword/:resetToken' element={<ResetPassword />} />

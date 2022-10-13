@@ -65,7 +65,7 @@ function Login( {isShowLogin, setIsShowLogin, setIsCreateAccount}) {
                     <button className='submit-btn' type="submit" onClick={Authenticate}>Login</button>
                     <br /><br />
                     <div className='modal-links'>
-                        <Link className='create-forgot-links' to='/createaccount' onClick={handleCreateAccount}>Create Account </Link><br />
+                        <Link className='create-forgot-links' onClick={handleCreateAccount}>Create Account </Link><br />
                         <Link className='create-forgot-links' to='/forgotpassword'onClick={() =>setIsShowLogin(false)}>Forgot Password</Link>
                     </div>
                 </div>
