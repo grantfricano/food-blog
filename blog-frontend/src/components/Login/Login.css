@@ -3,6 +3,10 @@
 
 }
 
+.form-box::backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
 .form-box{
     opacity:100%;
     background: url('test-collage.jpeg');
