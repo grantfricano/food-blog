@@ -59,8 +59,8 @@ function Login( {isShowLogin, setIsShowLogin}) {
                     {invalidPassword ? <label>Invalid Password<br/></label> : ''}
                     <button type="submit" onClick={Authenticate}>Login</button>
                     <br /><br />
-                    <Link to='/createaccount'>Create Account </Link><br />
-                    <Link to='/forgotpassword'>Forgot Password</Link>
+                    <Link to='/createaccount' onClick={() =>setIsShowLogin(false)}>Create Account </Link><br />
+                    <Link to='/forgotpassword' onClick={() =>setIsShowLogin(false)}>Forgot Password</Link>
                 </div>
             </div>
         </div>
