@@ -35,17 +35,7 @@
   @media screen and (max-width: 960px) {
 
     .form-box{
-        opacity:80%;
-        background: black;
         padding-right: 10vw;
         padding-left: 10vw;
-        border-radius: 20px;
-        box-shadow: 10px 10px 10px 1px rgba(0, 0, 0, 0.2);
-        color: white;
-        width: 30vw;
-        z-index: 1;
-        margin: auto;
-        padding-top: 10px;
-        padding-bottom: 10px;
       }
   }
