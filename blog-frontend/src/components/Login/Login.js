@@ -49,7 +49,6 @@ function Login( {isShowLogin, setIsShowLogin}) {
         <div className={`${!isShowLogin ? "active" : ""} show`}>
             <div className='login-box'>
                 <div className='form-box solid'>
-            
                     <br />
                     <input type="text" placeholder="Username" onChange={(event) => setUserName(event.target.value)}/>
                     <br />
@@ -57,10 +56,12 @@ function Login( {isShowLogin, setIsShowLogin}) {
                     <input type="password" placeholder="Password" onChange={(event) => setPassword(event.target.value)} />
                     <br />
                     {invalidPassword ? <label>Invalid Password<br/></label> : ''}
-                    <button type="submit" onClick={Authenticate}>Login</button>
+                    <button className='submit-btn' type="submit" onClick={Authenticate}>Login</button>
                     <br /><br />
-                    <Link to='/createaccount' onClick={() =>setIsShowLogin(false)}>Create Account </Link><br />
-                    <Link to='/forgotpassword' onClick={() =>setIsShowLogin(false)}>Forgot Password</Link>
+                    <div className='modal-links'>
+                        <Link className='create-forgot-links' to='/createaccount' onClick={() =>setIsShowLogin(false)}>Create Account </Link><br />
+                        <Link className='create-forgot-links' to='/forgotpassword'onClick={() =>setIsShowLogin(false)}>Forgot Password</Link>
+                    </div>
                 </div>
             </div>
         </div>
