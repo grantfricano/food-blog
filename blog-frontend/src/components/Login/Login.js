@@ -42,7 +42,6 @@ function Login( {isShowLogin}) {
                     setUser(username);
                     localStorage.setItem('token', JSON.stringify(data.token));
                     localStorage.setItem('username', JSON.stringify(username));
-                    navigate('/');
                 }
             })
     }
