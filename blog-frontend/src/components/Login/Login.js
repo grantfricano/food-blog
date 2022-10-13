@@ -49,13 +49,11 @@ function Login( {isShowLogin, setIsShowLogin}) {
         <div className={`${!isShowLogin ? "active" : ""} show`}>
             <div className='login-box'>
                 <div className='form-box solid'>
-                    <label>User Name</label>
+            
                     <br />
                     <input type="text" placeholder="Username" onChange={(event) => setUserName(event.target.value)}/>
                     <br />
                     {invalidUsername ? <label>Invalid Username<br/></label> : ''}
-                    <label>Password</label>
-                    <br />
                     <input type="password" placeholder="Password" onChange={(event) => setPassword(event.target.value)} />
                     <br />
                     {invalidPassword ? <label>Invalid Password<br/></label> : ''}
