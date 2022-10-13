@@ -5,7 +5,7 @@ import Navbar from './components/Navbar/Navbar';
 import Blogs from './components/Blogs';
 import NewBlog from './components/NewBlog';
 import Blog from './components/Blog';
-import Login from './components/Login';
+import Login from './components/Login/Login';
 import ForgotPassword from './components/ForgotPassword';
 import CreateAccount from './components/CreateAccount';
 import MyProfile from './components/MyProfile';
@@ -17,16 +17,22 @@ function App() {
   
   const [token, setToken] = useState('');
   const [user, setUser]  = useState(null);
+
+  const[isShowLogin, setIsShowLogin] = useState(false);
+
+  const handleLoginClick = () => {
+    setIsShowLogin((isShowLogin) => !isShowLogin);
+  }
   
   return (
     <UserContext.Provider value={ {user, setUser, token, setToken}  }>
 
       <div className="App"> 
-        <Navbar />
+        <Navbar handleLoginClick={handleLoginClick}/>
+        <Login  isShowLogin={isShowLogin}/>
 
         <Routes>
           <Route path='/' />
-          <Route path='/login' element={<Login />} />
           <Route path='/blogs' element={<Blogs />} />
           <Route path='/newblog' element={<NewBlog />} />
           <Route path='/blog/:id/:title' element={<Blog />} />

@@ -18,6 +18,16 @@
     url("./fonts/littlegroovy/littlegroovydemo.ttf") format("truetype");
   }
 
+
+@font-face {
+  font-family: "Mango";
+  src: local("mango-groovy.regular.ttf"),
+    url("./fonts/littlegroovy/mango-groovy.regular.ttf") format("truetype");
+  }
+
+.font-face-mango {
+  font-family: "Mango";
+}
 .font-face-groovy {
   font-family: "Groovy";
 }
@@ -27,15 +37,10 @@
 .font-face-gm {
   font-family: "Kirsty";
 }
-/* * {
-  background: #000 !important;
-  color: #0f0 !important;
-  outline: solid #f00 1px !important;
-} */
-
 
 body {
   margin: 0;
+  
 
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',

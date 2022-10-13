@@ -1,9 +1,10 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { Link, useNavigate } from "react-router-dom";
+import './Login.css';
 
-import { UserContext } from '../contexts/UserContext.js';
+import { UserContext } from '../../contexts/UserContext.js';
 
-function Login() {
+function Login( {isShowLogin}) {
     
     let [username, setUserName] = useState('');
     let [password, setPassword] = useState('');
@@ -47,19 +48,23 @@ function Login() {
     }
  
     return (
-        <div>
-            <label>User Name</label>
-            <input type="text" placeholder="Username" onChange={(event) => setUserName(event.target.value)}/>
-            <br />
-            {invalidUsername ? <label>Invalid Username<br/></label> : ''}
-            <label>Password</label>
-            <input type="password" placeholder="Password" onChange={(event) => setPassword(event.target.value)} />
-            <br />
-            {invalidPassword ? <label>Invalid Password<br/></label> : ''}
-            <button type="submit" onClick={Authenticate}>Login</button>
-            <br /><br />
-            <Link to='/createaccount'>Create Account </Link><br />
-            <Link to='/forgotpassword'>Forgot Password</Link>
+        <div className={`${!isShowLogin ? "active" : ""} show`}>
+            <div className='login-box'>
+                <div className='form-box solid'>
+                    <label>User Name</label>
+                    <input type="text" placeholder="Username" onChange={(event) => setUserName(event.target.value)}/>
+                    <br />
+                    {invalidUsername ? <label>Invalid Username<br/></label> : ''}
+                    <label>Password</label>
+                    <input type="password" placeholder="Password" onChange={(event) => setPassword(event.target.value)} />
+                    <br />
+                    {invalidPassword ? <label>Invalid Password<br/></label> : ''}
+                    <button type="submit" onClick={Authenticate}>Login</button>
+                    <br /><br />
+                    <Link to='/createaccount'>Create Account </Link><br />
+                    <Link to='/forgotpassword'>Forgot Password</Link>
+                </div>
+            </div>
         </div>
     )
 }

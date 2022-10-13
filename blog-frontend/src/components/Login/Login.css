@@ -1,0 +1,27 @@
+.login-box {
+    text-align: center;
+}
+
+.form-box{
+    opacity:80%;
+    background: black;
+    padding-right: 80px;
+    padding-left: 80px;
+    border-radius: 20px;
+    box-shadow: 10px 10px 10px 1px rgba(0, 0, 0, 0.2);
+    color: white;
+    width: 30vw;
+    z-index: 1;
+    margin: auto;
+  }
+
+  .show {
+    display: block;
+    transition: 800ms;
+    opacity: 1;
+  }
+  
+  .show.active {
+    transform: translateY(100px) scale(0) rotateY(180deg);
+    opacity: 0;
+  }
