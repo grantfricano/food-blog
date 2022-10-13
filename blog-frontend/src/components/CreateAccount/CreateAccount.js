@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 
-function CreateAccount() {
+function CreateAccount( {isCreateAccount, setIsCreateAccount}) {
     let [username, setUserName] = useState('');
     let [password, setPassword] = useState('');
     let [uniqueName, setUniqueName] = useState(true);
@@ -34,16 +34,18 @@ function CreateAccount() {
     }
 
     return (
-        <div>
-            <label>Email</label>
-            <input type="text" placeholder="Email Address" onChange={(event) => setUserName(event.target.value)}></input>
+      <div className={`${!isCreateAccount ? "active" : ""} show`}>
+        <div className='login-box'>
+          <div className='form-box solid'>
+            <input type="text" placeholder="Username" onChange={(event) => setUserName(event.target.value)}></input>
             <br />
             {uniqueName ? '' : <label>Username already in use<br/></label>}
-            <label>Password</label>
             <input type="password" placeholder="Password" onChange={(event) => setPassword(event.target.value)}></input>
             <br />
-            <button type="submit" onClick={CreateUser}>Create</button>
+            <button className='submit-btn' type="submit" onClick={CreateUser}>Create</button>
+          </div>
         </div>
+      </div>
     )
 } 
 

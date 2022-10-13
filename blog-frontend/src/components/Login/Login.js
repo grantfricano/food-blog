@@ -4,7 +4,7 @@ import './Login.css';
 
 import { UserContext } from '../../contexts/UserContext.js';
 
-function Login( {isShowLogin, setIsShowLogin}) {
+function Login( {isShowLogin, setIsShowLogin, setIsCreateAccount}) {
     
     let [username, setUserName] = useState('');
     let [password, setPassword] = useState('');
@@ -44,6 +44,12 @@ function Login( {isShowLogin, setIsShowLogin}) {
                 }
             })
     }
+
+    function handleCreateAccount() {
+
+        setIsShowLogin(false);
+        setIsCreateAccount(true);
+    }
  
     return (
         <div className={`${!isShowLogin ? "active" : ""} show`}>
@@ -59,7 +65,7 @@ function Login( {isShowLogin, setIsShowLogin}) {
                     <button className='submit-btn' type="submit" onClick={Authenticate}>Login</button>
                     <br /><br />
                     <div className='modal-links'>
-                        <Link className='create-forgot-links' to='/createaccount' onClick={() =>setIsShowLogin(false)}>Create Account </Link><br />
+                        <Link className='create-forgot-links' to='/createaccount' onClick={handleCreateAccount}>Create Account </Link><br />
                         <Link className='create-forgot-links' to='/forgotpassword'onClick={() =>setIsShowLogin(false)}>Forgot Password</Link>
                     </div>
                 </div>

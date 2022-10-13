@@ -3,13 +3,14 @@ import { Link } from "react-router-dom";
 import { useContext, useEffect, useState } from 'react';
 import './Navbar.css';
 
-function Navbar( {handleLoginClick} ) {
+function Navbar( {handleLoginClick, setIsCreateAccount} ) {
 
   const {token, setToken} = useContext(UserContext);
   const {user, setUser} = useContext(UserContext);
 
   const handleClick = () => {
     setMenuClicked(!menuClicked)
+    setIsCreateAccount(false);
     handleLoginClick();
   }
 
