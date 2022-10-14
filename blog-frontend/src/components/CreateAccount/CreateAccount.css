@@ -1,5 +1,8 @@
 .create-box {
-    text-align: center;
+  text-align: center;
+  width: 100vw;
+
+  background-color: rgba(175, 172, 172, 0.2);
 }
 
 .create-form-box{
@@ -20,13 +23,11 @@
     transition: 800ms;
     opacity: 1;
     position: fixed;
-    left: 25%;
-    right: 25%;
     transform: translate(-50%, 1);
   }
   
   .show-create.active-create {
-    transform: translate(500px) scale(1) rotateX(180deg);
+    /*transform: translate(500px) scale(1) rotateX(180deg);*/
     opacity: 0;
   }
 
