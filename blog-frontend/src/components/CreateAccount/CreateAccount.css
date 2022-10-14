@@ -20,7 +20,7 @@
     padding-bottom: 10px;
   }
 
-  .show {
+  .show-create {
     display: block;
     transition: 800ms;
     opacity: 1;
@@ -30,8 +30,8 @@
     transform: translate(-50%, 1);
   }
   
-  .show.active {
-    transform: translateY(500px) scale(1) rotateX(180deg);
+  .show-create.active {
+    transform: translate(500px) scale(1) rotateX(180deg);
     opacity: 0;
   }
 

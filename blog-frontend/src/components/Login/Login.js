@@ -46,7 +46,6 @@ function Login( {isShowLogin, setIsShowLogin, setIsCreateAccount}) {
     }
 
     function handleCreateAccount() {
-
         setIsShowLogin(false);
         setIsCreateAccount(true);
     }

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import './CreateAccount.css';
 
 
 function CreateAccount( {isCreateAccount, setIsCreateAccount, setIsShowLogin}) {
@@ -35,7 +36,7 @@ function CreateAccount( {isCreateAccount, setIsCreateAccount, setIsShowLogin}) {
     }
 
     return (
-      <div className={`${!isCreateAccount ? "active" : ""} show`}>
+      <div className={`${!isCreateAccount ? "active" : ""} show-create`}>
         <div className='login-box'>
           <div className='form-box solid'>
             <input type="text" placeholder="Username" onChange={(event) => setUserName(event.target.value)}></input>
