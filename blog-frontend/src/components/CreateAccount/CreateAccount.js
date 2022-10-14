@@ -36,15 +36,15 @@ function CreateAccount( {isCreateAccount, setIsCreateAccount, setIsShowLogin}) {
     }
 
     return (
-      <div className={`${!isCreateAccount ? "active" : ""} show-create`}>
-        <div className='login-box'>
-          <div className='form-box solid'>
+      <div className={`${!isCreateAccount ? "active-create" : ""} show-create`}>
+        <div className='create-box'>
+          <div className='create-form-box solid'>
             <input type="text" placeholder="Username" onChange={(event) => setUserName(event.target.value)}></input>
             <br />
             {uniqueName ? '' : <label>Username already in use<br/></label>}
             <input type="password" placeholder="Password" onChange={(event) => setPassword(event.target.value)}></input>
             <br />
-            <button className='submit-btn' type="submit" onClick={CreateUser}>Create</button>
+            <button className='create-submit-btn' type="submit" onClick={CreateUser}>Create</button>
           </div>
         </div>
       </div>
