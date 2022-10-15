@@ -15,14 +15,14 @@ function Comment( {blogId} ) {
         .then((response) => response.json())
         .then((data) => {setComments(data)});
 
-    },[response]);
+    },[response, comments]);
 
     function submitComment() {
 
         const comment = {
             author: user,
             content: content,
-            slug: blogId
+            blog: blogId
         }
           fetch(process.env.REACT_APP_API_URL + '/blogs/comments/', {
             method: 'POST',
