@@ -2,19 +2,20 @@ import { UserContext } from '../../contexts/UserContext';
 import { Link } from "react-router-dom";
 import { useContext, useEffect, useState } from 'react';
 import './Navbar.css';
+import Login from '../../components/Login/Login';
 
 function Navbar( {handleLoginClick, setIsCreateAccount} ) {
 
   const {token, setToken} = useContext(UserContext);
   const {user, setUser} = useContext(UserContext);
 
+  let [menuClicked, setMenuClicked] = useState(false);
+
   const handleClick = () => {
     setMenuClicked(!menuClicked)
     setIsCreateAccount(false);
     handleLoginClick();
   }
-
-  let [menuClicked, setMenuClicked] = useState(false);
 
   function Logout() {
     setToken(null);
@@ -46,6 +47,7 @@ function Navbar( {handleLoginClick, setIsCreateAccount} ) {
             {token ? ( <li className='nav-links' onClick={() => setMenuClicked(!menuClicked)}><Link to='/myprofile'>My Profile</Link></li>) : (<li className='nav-links' onClick={(handleClick)}><Link>Log In</Link></li>)  } 
             {token ? ( <li className='nav-links' onClick={() => setMenuClicked(!menuClicked)}><Link to='/' onClick={Logout}>Logout ({user})</Link></li>) : ''}
           </ul>
+
       </nav>    
   )
 }
