@@ -15,7 +15,7 @@ function Comment( {blogId} ) {
         .then((response) => response.json())
         .then((data) => {setComments(data)});
 
-    },[response, comments]);
+    },[response]);
 
     function submitComment() {
 
