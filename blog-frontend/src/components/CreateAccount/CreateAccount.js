@@ -37,8 +37,9 @@ function CreateAccount( {isCreateAccount, setIsCreateAccount, setIsShowLogin}) {
 
     return (
       <div className={`${!isCreateAccount ? "active-create" : ""} show-create`}>
-        <div className='create-box' onClick={() => setIsCreateAccount(false)}>
+        <div className='create-box'>
           <div className='create-form-box solid'>
+            <i className='fa-solid fa-x x-create' onClick={() => setIsCreateAccount(false)}></i>
             <input type="text" placeholder="Username" onChange={(event) => setUserName(event.target.value)}></input>
             <br />
             {uniqueName ? '' : <label>Username already in use<br/></label>}

@@ -52,8 +52,9 @@ function Login( {isShowLogin, setIsShowLogin, setIsCreateAccount}) {
  
     return (
         <div className={`${!isShowLogin ? "active" : ""} show`}>
-            <div className='login-box' onClick={() => setIsShowLogin(false)}> 
+            <div className='login-box' > 
                 <div className='form-box solid'>
+                    <i className='fa-solid fa-x x-login' onClick={() => setIsShowLogin(false)}></i>
                     <br />
                     <input type="text" placeholder="Username" onChange={(event) => setUserName(event.target.value)}/>
                     <br />

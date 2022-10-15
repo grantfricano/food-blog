@@ -44,3 +44,9 @@
     background-color: white;
 
   }
+
+  .x-create {
+    float: right;
+    margin-right: 20px;
+    background-color: rgba(120, 116, 116, 0.713);
+  }
