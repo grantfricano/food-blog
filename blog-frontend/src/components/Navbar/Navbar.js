@@ -2,7 +2,6 @@ import { UserContext } from '../../contexts/UserContext';
 import { Link } from "react-router-dom";
 import { useContext, useEffect, useState } from 'react';
 import './Navbar.css';
-import Login from '../../components/Login/Login';
 
 function Navbar( {handleLoginClick, setIsCreateAccount} ) {
 
