@@ -14,7 +14,6 @@ function Comment( {blogId} ) {
         fetch(process.env.REACT_APP_API_URL + '/blogs/comments/' + blogId)
         .then((response) => response.json())
         .then((data) => {setComments(data)});
-
     },[response]);
 
     function submitComment() {
@@ -30,7 +29,7 @@ function Comment( {blogId} ) {
             body: JSON.stringify(comment)
           })
             .then((response) => response.json())
-            .then((data) => {setComments(data)});
+            .then((data) => {setResponse(data)})
     }
 
     function deleteComment(commentId) {
