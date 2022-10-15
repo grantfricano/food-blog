@@ -52,7 +52,7 @@ function Login( {isShowLogin, setIsShowLogin, setIsCreateAccount}) {
  
     return (
         <div className={`${!isShowLogin ? "active" : ""} show`}>
-            <div className='login-box'> 
+            <div className='login-box' onClick={() => setIsShowLogin(false)}> 
                 <div className='form-box solid'>
                     <br />
                     <input type="text" placeholder="Username" onChange={(event) => setUserName(event.target.value)}/>
@@ -65,7 +65,7 @@ function Login( {isShowLogin, setIsShowLogin, setIsCreateAccount}) {
                     <br /><br />
                     <div className='modal-links'>
                         <Link className='crt-forgot-links' onClick={handleCreateAccount}>Create Account </Link><br />
-                        <Link className='crt-forgot-links' to='/forgotpassword'onClick={() =>setIsShowLogin(false)}>Forgot Password</Link>
+                        <Link className='crt-forgot-links' to='/forgotpassword' onClick={() =>setIsShowLogin(false)}>Forgot Password</Link>
                     </div>
                 </div>
             </div>

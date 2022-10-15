@@ -1,7 +1,7 @@
 .create-box {
   text-align: center;
   width: 100vw;
-
+  height: 100vh;
   background-color: rgba(175, 172, 172, 0.2);
 }
 
@@ -27,7 +27,7 @@
   }
   
   .show-create.active-create {
-    /*transform: translate(500px) scale(1) rotateX(180deg);*/
+    transform: translateY(500px) scale(1) rotateX(180deg);
     opacity: 0;
   }
 
