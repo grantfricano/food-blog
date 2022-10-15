@@ -4,7 +4,7 @@ import './Login.css';
 
 import { UserContext } from '../../contexts/UserContext.js';
 
-function Login( {isShowLogin, setIsShowLogin, setIsCreateAccount}) {
+function Login( {isShowLogin, setIsShowLogin, setIsCreateAccount, setIsForgotPW}) {
     
     let [username, setUserName] = useState('');
     let [password, setPassword] = useState('');
@@ -49,6 +49,11 @@ function Login( {isShowLogin, setIsShowLogin, setIsCreateAccount}) {
         setIsShowLogin(false);
         setIsCreateAccount(true);
     }
+
+    function handleForgotPW() {
+        setIsShowLogin(false);
+        setIsForgotPW(true);
+    }
  
     return (
         <div className={`${!isShowLogin ? "active" : ""} show`}>
@@ -66,7 +71,7 @@ function Login( {isShowLogin, setIsShowLogin, setIsCreateAccount}) {
                     <br /><br />
                     <div className='modal-links'>
                         <Link className='crt-forgot-links' onClick={handleCreateAccount}>Create Account </Link><br />
-                        <Link className='crt-forgot-links' to='/forgotpassword' onClick={() =>setIsShowLogin(false)}>Forgot Password</Link>
+                        <Link className='crt-forgot-links' onClick={handleForgotPW}>Forgot Password</Link>
                     </div>
                 </div>
             </div>

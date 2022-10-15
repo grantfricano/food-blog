@@ -27,7 +27,6 @@
     transform: translate(-50%, 1);
     top: 0;
     left: 0;
-    position: absolute;
   }
   
   .show-create.active-create {
@@ -35,7 +34,6 @@
     opacity: 0;
     top: 0;
     left: 0;
-    position: absolute;
   }
 
   .create-submit-btn {
