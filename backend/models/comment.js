@@ -3,7 +3,8 @@ import mongoose from 'mongoose';
 const commentSchema = new mongoose.Schema ({
     author: String, 
     content: String,
-    blog: {type:mongoose.Schema.Types.ObjectId, ref:'Blog'},
+    //blog: {type:mongoose.Schema.Types.ObjectId, ref:'Blog'},
+    slug: String,
     createdAt: { type: Date, default: Date.now }
 });
 

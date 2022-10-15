@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import sanityClient from '../../client.js';
 import imageUrlBuilder from  '@sanity/image-url';
 import BlockContent from '@sanity/block-content-to-react';
+import Comment from '../Comment.js';
 
 const builder = imageUrlBuilder(sanityClient);
 function urlFor(source) {
@@ -54,6 +55,7 @@ export default function OnePost() {
                     dataset={sanityClient.clientConfig.dataset}
                 />
             </div>
+            <Comment blogId={slug} />
         </div>
     )
 }

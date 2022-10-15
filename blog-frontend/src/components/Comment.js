@@ -22,7 +22,7 @@ function Comment( {blogId} ) {
         const comment = {
             author: user,
             content: content,
-            blog: blogId
+            slug: blogId
         }
           fetch(process.env.REACT_APP_API_URL + '/blogs/comments/', {
             method: 'POST',
