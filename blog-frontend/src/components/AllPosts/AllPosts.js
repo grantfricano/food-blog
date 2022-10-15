@@ -1,6 +1,7 @@
 import React, { useEffect, useState} from 'react';
 import sanityClient from  '../../client';
 import { Link } from 'react-router-dom';
+import './AllPosts.css';
 
 export default function AllPosts() {
     let [allPostsData, setAllPosts] = useState(null);
@@ -31,7 +32,7 @@ export default function AllPosts() {
                     allPostsData.map((post, index) => (
                         <Link to={'/' + post.slug.current} key={post.slug.current}>
                             <span key={index}>
-                                <img src={post.mainImage.asset.url} />
+                                <img className='main-image' src={post.mainImage.asset.url} />
                                 <span><h2>{post.title}</h2></span>
                             </span>
                         </Link>
