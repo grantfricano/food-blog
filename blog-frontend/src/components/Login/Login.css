@@ -63,6 +63,7 @@
     float: right;
     margin-right: 20px;
     background-color: rgba(120, 116, 116, 0.713);
+    cursor: pointer;
   }
   @media screen and (max-width: 960px) {
 
