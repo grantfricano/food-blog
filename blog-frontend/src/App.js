@@ -8,6 +8,8 @@ import Blog from './components/Blog';
 import Login from './components/Login/Login';
 import ForgotPassword from './components/ForgotPassword/ForgotPassword';
 import CreateAccount from './components/CreateAccount/CreateAccount';
+import AllPosts from './components/AllPosts/AllPosts';
+import OnePost from './components/OnePost/OnePost';
 import MyProfile from './components/MyProfile';
 import ResetPassword from './components/ResetPassword';
 import { UserContext } from './contexts/UserContext';
@@ -40,7 +42,8 @@ function App() {
         <ForgotPassword isForgotPW={isForgotPW} setIsForgotPW={setIsForgotPW} setIsShowLogin={setIsShowLogin}/>
         
         <Routes>
-          <Route path='/' />
+          <Route path='/' element={<AllPosts />} />
+          <Route path='/:slug'  element={<OnePost />} />
           <Route path='/blog/:id/:title' element={<Blog />} />
           <Route path='/myprofile' element={<MyProfile />} />
           <Route path='/forgotpassword' element={<ForgotPassword />} />
