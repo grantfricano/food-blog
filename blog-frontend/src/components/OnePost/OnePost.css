@@ -1,0 +1,31 @@
+.one-post-container {
+    margin-left: 20%;
+    margin-right: 20%;
+
+}
+
+.author-photo {
+    border-radius: 50%;
+    scale: .5;
+
+}
+
+.author-name {
+    padding-top: 20px;
+}
+.main-image {
+    text-align: center;
+    margin-right: 0;
+}
+.author-container {
+    display: flex;    
+}
+.content-body { 
+    padding-bottom: 200px;
+    text-align: center;
+}
+
+.post-title {
+    font-size: 40pt;
+    margin-bottom: 0;
+}

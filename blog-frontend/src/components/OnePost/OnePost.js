@@ -4,6 +4,7 @@ import sanityClient from '../../client.js';
 import imageUrlBuilder from  '@sanity/image-url';
 import BlockContent from '@sanity/block-content-to-react';
 import Comment from '../Comment.js';
+import './OnePost.css';
 
 const builder = imageUrlBuilder(sanityClient);
 function urlFor(source) {
@@ -39,16 +40,18 @@ export default function OnePost() {
     if (!postData) return <div>Loading...</div>;
 
     return (
-        <div>
+        <div className='one-post-container'>
             <div>
-                <h2>{postData.title}</h2>
-                <div>
-                    <img src={urlFor(postData.authorImage).width(100).url()} alt='Author is me' />
-                    <h4>{postData.name}</h4>
+                <h2 className='post-title'>{postData.title}</h2>
+                <div className='author-container'>
+                    <img className='author-photo' src={urlFor(postData.authorImage).width(100).url()} alt='Author is me' />
+                    <h4 className='author-name'>{postData.name}</h4>
                 </div>
             </div>
+            <div className='main-image'>
             <img src={urlFor(postData.mainImage).width(200).url()} />
-            <div>
+            </div>
+            <div className='content-body'>
                 <BlockContent
                     blocks={postData.body}
                     projectId={sanityClient.clientConfig.projectId}

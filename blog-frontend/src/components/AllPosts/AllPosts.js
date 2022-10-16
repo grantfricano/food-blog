@@ -25,21 +25,21 @@ export default function AllPosts() {
 
     return (
        <div className='posts-box'>
-        <div className='blog-title'>
-            <h2>BlogPosts!</h2>
-            <h3>Welcome to my blog posts page!</h3>
-        </div>
-        <div className='links'>
-            {allPostsData &&
-                allPostsData.map((post, index) => (
-                    <Link to={'/' + post.slug.current} key={post.slug.current}>
-                        <span key={index}>
-                            <img className='main-image' src={post.mainImage.asset.url} />
-                            <span><h2>{post.title}</h2></span>
-                        </span>
-                    </Link>
-                ))}
-        </div>
+            <div className='blog-title'>
+                <h2>BlogPosts!</h2>
+                <h3>Welcome to my blog posts page!</h3>
+            </div>
+            <div className='links'>
+                {allPostsData &&
+                    allPostsData.map((post, index) => (
+                        <Link to={'/' + post.slug.current} key={post.slug.current}>
+                            <div key={index}>
+                                <img className='main-image' src={post.mainImage.asset.url} />
+                                <span><h2>{post.title}</h2></span>
+                            </div>
+                        </Link>
+                    ))}
+            </div>
        </div>
     )
 }
