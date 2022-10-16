@@ -41,16 +41,16 @@ export default function OnePost() {
 
     return (
         <div className='one-post-container'>
-            <div>
+            <div className='title-card'>
+                <img className='main-image' src={urlFor(postData.mainImage).url()} />
                 <h2 className='post-title'>{postData.title}</h2>
-                <div className='author-container'>
-                    <img className='author-photo' src={urlFor(postData.authorImage).width(100).url()} alt='Author is me' />
+                {/*<div className='author-container'>
+                    <img className='author-photo' src={urlFor(postData.authorImage).width(100).url()} alt='Author is me' />}
                     <h4 className='author-name'>{postData.name}</h4>
-                </div>
+    </div> */}
             </div>
-            <div className='main-image'>
-            <img src={urlFor(postData.mainImage).width(200).url()} />
-            </div>
+
+            <div className='main-image'></div>
             <div className='content-body'>
                 <BlockContent
                     blocks={postData.body}

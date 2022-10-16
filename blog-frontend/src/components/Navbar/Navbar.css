@@ -13,6 +13,14 @@ a:link {
     padding-left: 10vw;
 }
 
+.navbar-image {
+    top: 0;
+    left: 0;
+    height: 100px;
+    width: 100%;
+    background-color: gray;
+
+}
 .navbar {
     /*background: linear-gradient(90deg, rgb(253, 253, 253) 0%, rgb(203, 203, 202) 100%);*/
     background-color: #fff;

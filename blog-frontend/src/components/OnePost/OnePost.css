@@ -1,31 +1,38 @@
 .one-post-container {
     margin-left: 20%;
     margin-right: 20%;
-
 }
 
 .author-photo {
     border-radius: 50%;
     scale: .5;
-
 }
 
 .author-name {
     padding-top: 20px;
+    font-weight: 400;
 }
+
 .main-image {
     text-align: center;
     margin-right: 0;
+    width: 100%;
 }
 .author-container {
     display: flex;    
 }
 .content-body { 
     padding-bottom: 200px;
-    text-align: center;
+    text-align: left;
+    font-family: Verdana, Geneva, Tahoma, sans-serif
 }
 
 .post-title {
     font-size: 40pt;
     margin-bottom: 0;
+    margin-top: 0;
+}
+
+.title-card {
+    margin-top: 25px;
 }
