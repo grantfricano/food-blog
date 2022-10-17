@@ -42,8 +42,8 @@ export default function OnePost() {
     return (
         <div className='one-post-container'>
             <div className='title-card'>
-                <img className='main-image' src={urlFor(postData.mainImage).url()} />
                 <h2 className='post-title'>{postData.title}</h2>
+                <img className='main-image' src={urlFor(postData.mainImage).url()} />
                 {/*<div className='author-container'>
                     <img className='author-photo' src={urlFor(postData.authorImage).width(100).url()} alt='Author is me' />}
                     <h4 className='author-name'>{postData.name}</h4>
