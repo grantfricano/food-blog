@@ -2,6 +2,7 @@ import { UserContext } from '../../contexts/UserContext';
 import { Link } from "react-router-dom";
 import { useContext, useEffect, useState } from 'react';
 import './Navbar.css';
+import pic from './resized-SF-10.jpg';
 
 function Navbar( {handleLoginClick, setIsCreateAccount} ) {
 
@@ -37,6 +38,7 @@ function Navbar( {handleLoginClick, setIsCreateAccount} ) {
   return (
     <>
       <nav className="navbar">
+
           <div className='navbar-name font-face-gren'><Link to='/'>something with ginger</Link></div>
           <div className='menu-icon' onClick={() => setMenuClicked(!menuClicked)}>
             <i className={menuClicked ? 'fas fa-times' : 'fas fa-bars'}></i>
@@ -45,8 +47,9 @@ function Navbar( {handleLoginClick, setIsCreateAccount} ) {
             {token ? ( <li className='nav-links' onClick={() => setMenuClicked(!menuClicked)}><Link to='/myprofile'>My Profile</Link></li>) : (<li className='nav-links' onClick={(handleClick)}><Link>Log In</Link></li>)  } 
             {token ? ( <li className='nav-links' onClick={() => setMenuClicked(!menuClicked)}><Link to='/' onClick={Logout}>Logout ({user})</Link></li>) : ''}
           </ul>
+          {/* <img src={pic} className='header-image' /> */}
       </nav>    
-      <div className='navbar-image'></div>
+      {/* <div className='navbar-image'></div> */}
       </>
   )
 }

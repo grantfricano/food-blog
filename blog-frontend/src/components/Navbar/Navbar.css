@@ -13,26 +13,32 @@ a:link {
     padding-left: 10vw;
 }
 
+/* .header-image {
+    margin-bottom: 10px;
+    z-index: -1;
+    filter: brightness(40%);
+} */
+
 .navbar-image {
     top: 0;
     left: 0;
     height: 100px;
     width: 100%;
-    background-color: gray;
     margin-bottom: 10px;
-
 }
+
 .navbar {
     /*background: linear-gradient(90deg, rgb(253, 253, 253) 0%, rgb(203, 203, 202) 100%);*/
-    background-color: #fff;
+    background-image: url('resized-SF-10.jpg');
+    filter: brightness(40%);
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 200px;
 }
 
 .navbar a {
-    color: rgb(0, 0, 0);
-    
+    color: rgb(255, 255, 255);
 }
 
 .nav-links {
@@ -45,7 +51,7 @@ a:link {
 }
 
 .nav-links a {
-    color: rgb(0, 0, 0);
+    color: rgb(255, 253, 253);
 
 }
 .nav-menu {
