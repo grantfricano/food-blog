@@ -32,13 +32,13 @@ function ForgotPassword({isForgotPW, setIsForgotPW, setIsShowLogin}) {
             <div className='forgotpw-box'>
                 <div className='forgotpw-form-box solid'>
                     <i className='fa-solid fa-x x-forgotpw' onClick={() => setIsForgotPW(false)}></i>
-                    <label>Email Address</label>
+                    <br/>
                     <input type="text" placeholder='email address' onChange={(event) => setEmailAddress(event.target.value)}/>
                     <br/>
-                    <label>Username</label>
                     <input type="text" placeholder='username' onChange={(event) => setUsername(event.target.value)}/>
                     <br /><br />
                     <button type='submit' onClick={Reset} >Submit</button>
+                    <br/><br/>
                 </div>
             </div>
         </div>

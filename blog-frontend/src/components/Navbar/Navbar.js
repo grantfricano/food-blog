@@ -2,7 +2,7 @@ import { UserContext } from '../../contexts/UserContext';
 import { Link } from "react-router-dom";
 import { useContext, useEffect, useState } from 'react';
 import './Navbar.css';
-import pic from './resized-SF-10.jpg';
+
 
 function Navbar( {handleLoginClick, setIsCreateAccount} ) {
 

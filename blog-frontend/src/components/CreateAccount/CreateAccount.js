@@ -40,12 +40,14 @@ function CreateAccount( {isCreateAccount, setIsCreateAccount, setIsShowLogin}) {
         <div className='create-box'>
           <div className='create-form-box solid'>
             <i className='fa-solid fa-x x-create' onClick={() => setIsCreateAccount(false)}></i>
+            <br/>
             <input type="text" placeholder="Username" onChange={(event) => setUserName(event.target.value)}></input>
             <br />
             {uniqueName ? '' : <label>Username already in use<br/></label>}
             <input type="password" placeholder="Password" onChange={(event) => setPassword(event.target.value)}></input>
             <br />
             <button className='create-submit-btn' type="submit" onClick={CreateUser}>Create</button>
+            <br/><br />
           </div>
         </div>
       </div>

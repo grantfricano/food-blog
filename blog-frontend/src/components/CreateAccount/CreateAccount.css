@@ -8,7 +8,8 @@
 
 .create-form-box{
     opacity:100%;
-    background: url('test-collage.jpeg');
+    background: url('rotated-rose.jpg');
+    background-size: contain;
     border-radius: 20px;
     box-shadow: 10px 10px 10px 1px rgba(0, 0, 0, 0.2);
     color: white;
@@ -27,6 +28,7 @@
     transform: translate(-50%, 1);
     top: 0;
     left: 0;
+    position: absolute;
   }
   
   .show-create.active-create {
@@ -34,6 +36,7 @@
     opacity: 0;
     top: 0;
     left: 0;
+    position: absolute;
   }
 
   .create-submit-btn {
