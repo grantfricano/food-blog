@@ -35,7 +35,7 @@ export default function AllPosts() {
                         <Link to={'/' + post.slug.current} key={post.slug.current}>
                             <div key={index}>
                                 <img className='main-image' src={post.mainImage.asset.url} />
-                                <span><h2>{post.title}</h2></span>
+                                <span className='post-title'><h2>{post.title}</h2></span>
                             </div>
                         </Link>
                     ))}

@@ -19,5 +19,10 @@
 .links {
  text-align: center;
  display: grid;
-
 }
+
+.post-title {
+    font-family: 'bebas-neue-by-fontfabric';
+    font-size: 8pt;
+}
+

@@ -37,7 +37,7 @@ function Navbar( {handleLoginClick, setIsCreateAccount} ) {
   return (
     <>
       <nav className="navbar">
-          <div className='navbar-name font-face-bebas'><Link to='/'>something with ginger</Link></div>
+          <div className='navbar-name font-face-gren'><Link to='/'>something with ginger</Link></div>
           <div className='menu-icon' onClick={() => setMenuClicked(!menuClicked)}>
             <i className={menuClicked ? 'fas fa-times' : 'fas fa-bars'}></i>
           </div>
