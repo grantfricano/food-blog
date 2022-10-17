@@ -1,10 +1,7 @@
 import './App.css';
-import React, { useState, useContext } from'react';
+import React, { useState } from'react';
 import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
-import Blogs from './components/Blogs';
-import NewBlog from './components/NewBlog';
-import Blog from './components/Blog';
 import Login from './components/Login/Login';
 import ForgotPassword from './components/ForgotPassword/ForgotPassword';
 import CreateAccount from './components/CreateAccount/CreateAccount';
@@ -13,7 +10,6 @@ import OnePost from './components/OnePost/OnePost';
 import MyProfile from './components/MyProfile';
 import ResetPassword from './components/ResetPassword';
 import { UserContext } from './contexts/UserContext';
-import './fonts/kirsty/kirstybdit.otf';
 
 function App() {
   
@@ -44,7 +40,6 @@ function App() {
         <Routes>
           <Route path='/' element={<AllPosts />} />
           <Route path='/:slug'  element={<OnePost />} />
-          <Route path='/blog/:id/:title' element={<Blog />} />
           <Route path='/myprofile' element={<MyProfile />} />
           <Route path='/forgotpassword' element={<ForgotPassword />} />
           <Route path='/resetpassword/:resetToken' element={<ResetPassword />} />

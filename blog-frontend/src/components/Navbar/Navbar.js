@@ -37,7 +37,7 @@ function Navbar( {handleLoginClick, setIsCreateAccount} ) {
   return (
     <>
       <nav className="navbar">
-          <div className='navbar-name font-face-mango'><Link to='/'>something with ginger</Link></div>
+          <div className='navbar-name font-face-bebas'><Link to='/'>something with ginger</Link></div>
           <div className='menu-icon' onClick={() => setMenuClicked(!menuClicked)}>
             <i className={menuClicked ? 'fas fa-times' : 'fas fa-bars'}></i>
           </div>
@@ -46,7 +46,6 @@ function Navbar( {handleLoginClick, setIsCreateAccount} ) {
             {token ? ( <li className='nav-links' onClick={() => setMenuClicked(!menuClicked)}><Link to='/' onClick={Logout}>Logout ({user})</Link></li>) : ''}
           </ul>
       </nav>    
-      {/*<img className='navbar-image' src='test-collage.jpeg'></img>*/}
       <div className='navbar-image'></div>
       </>
   )

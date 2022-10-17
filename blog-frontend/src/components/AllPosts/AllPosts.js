@@ -25,10 +25,10 @@ export default function AllPosts() {
 
     return (
        <div className='posts-box'>
-            <div className='blog-title'>
+            {/* <div className='blog-title'>
                 <h2>BlogPosts!</h2>
                 <h3>Welcome to my blog posts page!</h3>
-            </div>
+            </div> */}
             <div className='links'>
                 {allPostsData &&
                     allPostsData.map((post, index) => (
