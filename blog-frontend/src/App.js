@@ -31,20 +31,24 @@ function App() {
     <UserContext.Provider value={ {user, setUser, token, setToken}  }>
 
       <div className="App"> 
-        <Navbar handleLoginClick={handleLoginClick} setIsCreateAccount={setIsCreateAccount}/>
-        
-        <Login isShowLogin={isShowLogin} setIsShowLogin={setIsShowLogin} setIsCreateAccount={setIsCreateAccount} setIsForgotPW={setIsForgotPW}/>
-        <CreateAccount isCreateAccount={isCreateAccount} setIsCreateAccount={setIsCreateAccount} setIsShowLogin={setIsShowLogin}/>
-        <ForgotPassword isForgotPW={isForgotPW} setIsForgotPW={setIsForgotPW} setIsShowLogin={setIsShowLogin}/>
-        
-        <Routes>
-          <Route path='/' element={<AllPosts />} />
-          <Route path='/:slug'  element={<OnePost />} />
-          <Route path='/myprofile' element={<MyProfile />} />
-          <Route path='/forgotpassword' element={<ForgotPassword />} />
-          <Route path='/resetpassword/:resetToken' element={<ResetPassword />} />
-        </Routes>
-
+        <div className='grid-container'>
+           <div className='nav-grid '>
+              <Navbar handleLoginClick={handleLoginClick} setIsCreateAccount={setIsCreateAccount}/>
+              
+              <Login isShowLogin={isShowLogin} setIsShowLogin={setIsShowLogin} setIsCreateAccount={setIsCreateAccount} setIsForgotPW={setIsForgotPW}/>
+              <CreateAccount isCreateAccount={isCreateAccount} setIsCreateAccount={setIsCreateAccount} setIsShowLogin={setIsShowLogin}/>
+              <ForgotPassword isForgotPW={isForgotPW} setIsForgotPW={setIsForgotPW} setIsShowLogin={setIsShowLogin}/>
+          </div>
+          <div className='body-grid'>
+            <Routes>
+              <Route path='/' element={<AllPosts />} />
+              <Route path='/:slug'  element={<OnePost />} />
+              <Route path='/myprofile' element={<MyProfile />} />
+              <Route path='/forgotpassword' element={<ForgotPassword />} />
+              <Route path='/resetpassword/:resetToken' element={<ResetPassword />} />
+            </Routes>
+          </div>
+        </div>
       </div>
 
     </UserContext.Provider>

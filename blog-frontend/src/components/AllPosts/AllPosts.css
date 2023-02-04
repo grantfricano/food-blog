@@ -1,15 +1,17 @@
-.main-image {
-    height:25%;
-    width: 25%;
+img.main-image {
+    height:50%;
+    width: 50%;
 }
 
 .grid-box {
     display: flex;
 }
 
+.entry {
+    display: flex;
+}
 .posts-box {
-    margin-left: 12%;
-    margin-right: 12%;
+
 }   
 
 .blog-title {
@@ -23,6 +25,6 @@
 
 .post-title {
     font-family: 'bebas-neue-by-fontfabric';
-    font-size: 8pt;
+    font-size: 6pt;
 }
 

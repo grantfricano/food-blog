@@ -5,19 +5,23 @@ a:link {
 }
 
 .navbar-name {
+    padding-top: 20px; 
+    vertical-align: center;
     color: rgb(0, 0, 0) !important;
-    font-size: 30pt;
+    font-size: 50pt;
     font-weight: 350;
     justify-self: start;
     white-space: nowrap;
-    padding-left: 10vw;
+    width: 20vw;
+    text-align: center;
+    height: 100%;
 }
 
-/* .header-image {
-    margin-bottom: 10px;
-    z-index: -1;
-    filter: brightness(40%);
-} */
+
+.navbar-name a{
+    color: rgb(0, 0, 0) !important;
+ 
+}
 
 .navbar-image {
     top: 0;
@@ -28,13 +32,12 @@ a:link {
 }
 
 .navbar {
-    /*background: linear-gradient(90deg, rgb(253, 253, 253) 0%, rgb(203, 203, 202) 100%);*/
+    
+}
+
+.navbar-image {
     background-image: url('resized-SF-10.jpg');
     filter: brightness(40%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 200px;
 }
 
 .navbar a {
@@ -63,6 +66,7 @@ a:link {
     width: 70vw;
     justify-content: end;
     margin-right: 2rem;
+    grid-area: menu;
 }
 
 .menu-icon {
