@@ -19,6 +19,11 @@
     url("./fonts/littlegroovy/littlegroovydemo.ttf") format("truetype");
   }
 
+@font-face {
+    font-family: "Simplifica";
+    src: local("simplifica.ttf"),
+      url("./fonts/simplifica/simplifica.ttf") format("truetype");
+    }
 
 @font-face {
   font-family: "Mango";
@@ -26,6 +31,9 @@
     url("./fonts/littlegroovy/mango-groovy.regular.ttf") format("truetype");
   }
 
+.font-face-simplifica {
+  font-family: "Simplifica";
+}
 .font-face-bebas {
   font-family: 'bebas-neue-by-fontfabric';
 }
@@ -49,16 +57,17 @@
 }
 
 .nav-grid {
-  
   position: sticky;
-top: 0; 
-height: 100vh;
+  top: 0; 
+  height: 97vh;
+  background-color: #3b3b3b;
+  border: 10px white solid;
 }
 
 .body-grid {
-  padding-top: 5%;
- width: auto;
- height: auto;
+  padding-top: 1.3vh;
+  width: auto;
+  height: auto;
 }
 body {
 

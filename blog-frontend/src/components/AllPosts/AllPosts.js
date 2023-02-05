@@ -8,15 +8,18 @@ export default function AllPosts() {
 
     useEffect( () => {
         sanityClient.fetch (
-            `*[_type == "post"]{
+            `*[_type == "post"] | order(_createdAt desc) {
                 title, 
                 slug,
+                _createdAt,
                 mainImage{
                     asset-> {
                         _id, 
                         url
                     }
-                }
+                },
+                "name": author->name,
+                "authorImage": author->image    
             }`
         )
         .then((data) => {setAllPosts(data)})
@@ -34,9 +37,12 @@ export default function AllPosts() {
                     allPostsData.map((post, index) => (
                         <Link to={'/' + post.slug.current} key={post.slug.current}>
                             <div className='entry' key={index}>
-                                <img className='main-image' src={post.mainImage.asset.url} />
-                                <span className='post-title'><h2>{post.title}</h2></span>    
+                                <img className='thumbnail-image' src={post.mainImage.asset.url} />
+                                <div className='post-title'><h5 className='font-face-simplifica'>{post.title}</h5>  <div className='post-timestamp'>{
+                                     String(post._createdAt).split("T")[0] 
+                                }</div></div> 
                             </div>
+                            <br />
                         </Link>
                     ))}
             </div>

@@ -40,18 +40,13 @@ export default function OnePost() {
     if (!postData) return <div>Loading...</div>;
 
     return (
-        <div className='one-post-container'>
+        <div className='one-post-container '>
             <div className='title-card'>
-                <h2 className='post-title'>{postData.title}</h2>
-                <img className='main-image' src={urlFor(postData.mainImage).url()} />
-                {/*<div className='author-container'>
-                    <img className='author-photo' src={urlFor(postData.authorImage).width(100).url()} alt='Author is me' />}
-                    <h4 className='author-name'>{postData.name}</h4>
-    </div> */}
+                
+                <img className='main-image-banner' src={urlFor(postData.mainImage).url()} />
+                <h2 className='post-title font-face-simplifica'>{postData.title}</h2>
             </div>
-
-            <div className='main-image'></div>
-            <div className='content-body'>
+            <div className='content-body '>
                 <BlockContent
                     blocks={postData.body}
                     projectId={sanityClient.clientConfig.projectId}

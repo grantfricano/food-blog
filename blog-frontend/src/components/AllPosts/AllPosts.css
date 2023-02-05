@@ -1,6 +1,6 @@
-img.main-image {
-    height:50%;
-    width: 50%;
+img.thumbnail-image {
+    height:30%;
+    width: 30%;
 }
 
 .grid-box {
@@ -9,7 +9,9 @@ img.main-image {
 
 .entry {
     display: flex;
+
 }
+
 .posts-box {
 
 }   
@@ -21,10 +23,26 @@ img.main-image {
 .links {
  text-align: center;
  display: grid;
+ line-height: 1;    
+}
+
+.post-timestamp {
+    font-size: 12pt;
+    color: gray;    
+    font-style: italic;
+    
 }
 
 .post-title {
-    font-family: 'bebas-neue-by-fontfabric';
-    font-size: 6pt;
+    font-family: sans-serif; 
+    color: black;
+    padding-left: 10px;
+    text-align: left;
+    padding-top: 6%;
+}
+
+h5 {
+    margin: 0;
+    font-size: 40pt;
 }
 
