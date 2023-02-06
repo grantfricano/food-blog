@@ -48,23 +48,27 @@ function Comment( {blogId} ) {
     return (
         <>
         <div className='comment-box'>
-        {token ? <h2 className='comment-header font-face-simplifica'>Submit a Comment</h2> : <h2 className='comment-header font-face-simplifica'>Login to Comment</h2>}
-        {token ? <input type="text" className='comment-entry' id="newComment" placeholder="Comment" onChange={(event) => setContent(event.target.value)} /> : ''}
+        {token ? <h2 className='comment-header font-face-simplifica'>comments</h2> : <h2 className='comment-header font-face-simplifica'>Login to Comment</h2>}
         <br />
-        {token ? <button type="submit" onClick={submitComment}>Save</button> : ''}
+        {token ? <textarea rows='5' type="text" className='comment-entry' id="newComment" placeholder="Comment..." onChange={(event) => setContent(event.target.value)} /> : ''}
+        <br />
+        {token ? <button className='comment-submit-button font-face-simplifica' type="submit" onClick={submitComment}><b>submit</b> </button> : ''}
+        <br /><br />
 
-        <table border='1'>
-        <tr>
+        <table className='comment-table' border='1'>
+        {/* <tr>
           <th>Author</th>
           <th>Comment</th>
-        </tr>
+        </tr> */}
         {
           comments.map((comment) => ( 
-            <tr id={comment._id}>
-              <td>{comment.author}</td>
-              <td>{comment.content}</td>
-              {user == comment.author ? <button type="submit" onClick={() => deleteComment(comment._id)}>Delete</button> : ''}
-            </tr>
+              <tr id={comment._id}>
+                  <div><b>{comment.author}</b> on   <i>{String(comment.createdAt).split("T")[0]} </i></div>
+                  <div>{comment.content}</div>
+                {user == comment.author ? <button className='comment-delete-button' type="submit" onClick={() => deleteComment(comment._id)}><b>delete</b></button> : ''}   
+                <br /> <br />
+              </tr>
+
           ))
         }
       </table>

@@ -9,7 +9,29 @@
 }
 
 .comment-entry {
-    width: 100%;
+    width: 50%;
+    border: 1px solid rgba(168, 168, 168, 0.397);
 
 }
 
+.comment-table {
+    width: 50%;
+    border: none;
+}
+
+.comment-delete-button {
+    border: none;
+    float: right;
+    font-size: 10pt;
+    background-color: white;
+}
+
+.comment-submit-button {
+    border: none;
+    font-size: 20pt;
+
+}
+
+textarea {
+    resize: none;
+}
