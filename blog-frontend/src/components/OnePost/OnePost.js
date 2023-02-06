@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import sanityClient from '../../client.js';
 import imageUrlBuilder from  '@sanity/image-url';
 import BlockContent from '@sanity/block-content-to-react';
-import Comment from '../Comment.js';
+import Comment from '../Comment/Comment.js';
 import './OnePost.css';
 
 const builder = imageUrlBuilder(sanityClient);
@@ -37,6 +37,13 @@ export default function OnePost() {
         .catch(console.error);
     }, {slug})
 
+    
+const styles = {
+    color: "red",
+    background: "#0f0",
+    fontSize: "32px"
+};
+
     if (!postData) return <div>Loading...</div>;
 
     return (
@@ -44,7 +51,7 @@ export default function OnePost() {
             <div className='title-card'>
                 
                 <img className='main-image-banner' src={urlFor(postData.mainImage).url()} />
-                <h2 className='post-title font-face-simplifica'>{postData.title}</h2>
+                <h2 className='one-post-title font-face-simplifica'>{postData.title}</h2>
             </div>
             <div className='content-body '>
                 <BlockContent

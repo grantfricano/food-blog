@@ -12,6 +12,7 @@ export default function AllPosts() {
                 title, 
                 slug,
                 _createdAt,
+                previewText,
                 mainImage{
                     asset-> {
                         _id, 
@@ -40,7 +41,9 @@ export default function AllPosts() {
                                 <img className='thumbnail-image' src={post.mainImage.asset.url} />
                                 <div className='post-title'><h5 className='font-face-simplifica'>{post.title}</h5>  <div className='post-timestamp'>{
                                      String(post._createdAt).split("T")[0] 
-                                }</div></div> 
+                                }</div>
+                                <div><p>{post.previewText}</p></div>
+                            </div> 
                             </div>
                             <br />
                         </Link>

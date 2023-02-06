@@ -21,16 +21,14 @@ img.thumbnail-image {
 }
 
 .links {
- text-align: center;
- display: grid;
- line-height: 1;    
+    display: grid;
+    line-height: 1;    
 }
 
 .post-timestamp {
     font-size: 12pt;
     color: gray;    
     font-style: italic;
-    
 }
 
 .post-title {
@@ -44,5 +42,10 @@ img.thumbnail-image {
 h5 {
     margin: 0;
     font-size: 40pt;
+}
+
+p {
+    font-family: sans-serif;
+    font-size: 18pt;
 }
 

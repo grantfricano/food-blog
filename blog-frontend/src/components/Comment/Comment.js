@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
-import { UserContext } from '../contexts/UserContext';
+import { UserContext } from '../../contexts/UserContext';
+import './Comment.css';
 
 function Comment( {blogId} ) {
 
@@ -46,11 +47,12 @@ function Comment( {blogId} ) {
 
     return (
         <>
-
-        {token ? <input type="text" id="newComment" placeholder="Comment" onChange={(event) => setContent(event.target.value)} /> : ''}
+        <div className='comment-box'>
+        {token ? <h2 className='comment-header font-face-simplifica'>Submit a Comment</h2> : <h2 className='comment-header font-face-simplifica'>Login to Comment</h2>}
+        {token ? <input type="text" className='comment-entry' id="newComment" placeholder="Comment" onChange={(event) => setContent(event.target.value)} /> : ''}
         <br />
         {token ? <button type="submit" onClick={submitComment}>Save</button> : ''}
-        <br /><br /><br />
+
         <table border='1'>
         <tr>
           <th>Author</th>
@@ -66,7 +68,7 @@ function Comment( {blogId} ) {
           ))
         }
       </table>
-
+      </div>
       </>
     )
 }
