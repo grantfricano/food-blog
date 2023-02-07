@@ -4,8 +4,8 @@
 
 
 .comment-box {
-    margin-left: 10%;
-    margin-right: 10%;
+    margin-left: 20%;
+    margin-right: 20%;
 }
 
 .comment-entry {
@@ -23,15 +23,25 @@
     border: none;
     float: right;
     font-size: 10pt;
-    background-color: white;
+    line-height: 1.9;
+
 }
 
 .comment-submit-button {
     border: none;
-    font-size: 20pt;
+    font-size: 10pt;
+    line-height: 1.9;
 
 }
 
 textarea {
     resize: none;
+}
+
+@media screen and (max-width: 600px) {
+    .comment-box {
+        margin: 0 auto;
+        width: 90%;
+    }   
+
 }

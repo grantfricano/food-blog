@@ -85,3 +85,25 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+@media screen and (max-width: 600px) {
+
+  .grid-container {
+    grid-template-columns: 100%;
+  }
+  
+  .nav-grid {
+    grid-area: 1/1/4/1;
+    position: sticky;
+    height: 10vh;
+    top: 0; 
+    width: 100%;
+    background-color:   #ffffff;
+    border: none;
+
+  }
+  .body-grid {
+    grid-area: 4/1/4/1;
+  }
+}

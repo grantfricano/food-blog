@@ -48,11 +48,11 @@ function Comment( {blogId} ) {
     return (
         <>
         <div className='comment-box'>
-        {token ? <h2 className='comment-header font-face-simplifica'>comments</h2> : <h2 className='comment-header font-face-simplifica'>Login to Comment</h2>}
+        {token ? <h2 className='comment-header font-face-simplifica'>comments</h2> : <h2 className='comment-header font-face-simplifica'>login to comment</h2>}
         <br />
         {token ? <textarea rows='5' type="text" className='comment-entry' id="newComment" placeholder="Comment..." onChange={(event) => setContent(event.target.value)} /> : ''}
         <br />
-        {token ? <button className='comment-submit-button font-face-simplifica' type="submit" onClick={submitComment}><b>submit</b> </button> : ''}
+        {token ? <button className='comment-submit-button ' type="submit" onClick={submitComment}><b>submit</b> </button> : ''}
         <br /><br />
 
         <table className='comment-table' border='1'>

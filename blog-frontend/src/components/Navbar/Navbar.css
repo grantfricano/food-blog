@@ -39,11 +39,6 @@ a:link {
     transform: translateY(-50%);
 }
 
-.navbar-image {
-    background-image: url('resized-SF-10.jpg');
-    filter: brightness(40%);
-}
-
 .navbar a {
     color: rgb(255, 255, 255);
 }
@@ -54,7 +49,8 @@ a:link {
     font-size: 12pt;
     font-weight: 100;
     padding: 0.5rem 1rem;
-
+    list-style: none;
+    
 }
 
 .nav-links a {
@@ -86,11 +82,26 @@ a:link {
     color: #000;
 }
 
-@media screen and (max-width: 960px) {
+@media screen and (max-width: 600px) {
+
+    .nav-links a{
+        color: black;
+    }
     .navbar {
-        position: relative;
+        width: 100%;
+        margin: 0;
+        position: absolute;
+        top: 0;
+        -ms-transform: translateY(0);
+        transform: translateY(0);
+        display: flex;
+
     }
     
+    .navbar-name a{
+        color: rgb(0, 0, 0) !important;
+     
+    }
     .nav-menu {
         display: flex;
         flex-direction: column;
@@ -122,15 +133,14 @@ a:link {
     }
 
     .nav-links:hover {
-
+        
         border-radius: 0;
     }
 
     .navbar-name {
-        top: 0;
-        left: 0;
         font-size: 12pt !important;
-        padding-left: 0;
+        margin-left: 40%;
+        
     }
 
     .menu-icon {
