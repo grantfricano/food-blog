@@ -65,7 +65,7 @@
 }
 
 .body-grid {
-  padding-top: 1.3vh;
+  border: 10px white solid;
   width: auto;
   height: auto;
 }

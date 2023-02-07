@@ -5,7 +5,6 @@ a:link {
 }
 
 .navbar-name {
-    padding-top: 20px; 
     vertical-align: center;
     color: rgb(0, 0, 0) !important;
     font-size: 50pt;
@@ -15,8 +14,8 @@ a:link {
     width: 20vw;
     text-align: center;
     height: 100%;
+    width: 100%;
 }
-
 
 .navbar-name a{
     color: rgb(231, 229, 229) !important;
@@ -37,6 +36,7 @@ a:link {
     top: 50%;
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
+    width: 100%;
 }
 
 .navbar a {
@@ -48,7 +48,7 @@ a:link {
     font-family: 'Open Sans', sans-serif;
     font-size: 12pt;
     font-weight: 100;
-    padding: 0.5rem 1rem;
+    text-align: center;
     list-style: none;
     
 }
@@ -127,13 +127,10 @@ a:link {
 
     .nav-links {
         text-align: center;
-        padding-top: 2rem;
-        padding-bottom: 2rem;
         display: table;
     }
 
     .nav-links:hover {
-        
         border-radius: 0;
     }
 

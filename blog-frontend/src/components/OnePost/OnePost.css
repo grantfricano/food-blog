@@ -2,6 +2,9 @@
 
 }
 
+.content-body ul {
+    font-size: 14pt;
+}
 .author-photo {
     border-radius: 50%;
     scale: .5;
