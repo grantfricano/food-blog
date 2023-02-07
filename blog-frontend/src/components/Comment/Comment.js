@@ -14,7 +14,7 @@ function Comment( {blogId} ) {
     useEffect(() => {
         fetch(process.env.REACT_APP_API_URL + '/blogs/comments/' + blogId)
         .then((response) => response.json())
-        .then((data) => {setComments(data)});
+        .then((data) => {setComments(data)})
     },[response]);
 
     function submitComment() {
@@ -24,13 +24,16 @@ function Comment( {blogId} ) {
             content: content,
             blog: blogId
         }
-          fetch(process.env.REACT_APP_API_URL + '/blogs/comments/', {
-            method: 'POST',
-            headers: { 'content-type': 'application/json', 'Authorization': token},
-            body: JSON.stringify(comment)
-          })
-            .then((response) => response.json())
-            .then((data) => {setResponse(data)})
+
+        document.getElementById("newComment").value = "";
+
+        fetch(process.env.REACT_APP_API_URL + '/blogs/comments/', {
+          method: 'POST',
+          headers: { 'content-type': 'application/json', 'Authorization': token},
+          body: JSON.stringify(comment)
+        })
+          .then((response) => response.json())
+          .then((data) => {setResponse(data)});
     }
 
     function deleteComment(commentId) {
