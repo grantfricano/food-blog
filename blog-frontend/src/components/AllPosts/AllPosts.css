@@ -1,5 +1,5 @@
 img.thumbnail-image {
-    height:30%;
+    height: 30%;
     width: 30%;
 }
 
@@ -9,7 +9,6 @@ img.thumbnail-image {
 
 .entry {
     display: flex;
-
 }
 
 .posts-box {

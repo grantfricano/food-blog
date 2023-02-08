@@ -98,10 +98,9 @@ code {
     position: sticky;
     height: 10vh;
     top: 0; 
-    width: 100%;
+    width: auto;
     background-color:   #ffffff;
-    border: none;
-
+    border:  10px white solid;;
   }
   .body-grid {
     grid-area: 4/1/4/1;

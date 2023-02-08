@@ -11,10 +11,9 @@ a:link {
     font-weight: 350;
     justify-self: start;
     white-space: nowrap;
-    width: 20vw;
+    width: auto;
     text-align: center;
     height: 100%;
-    width: 100%;
 }
 
 .navbar-name a{
@@ -53,20 +52,12 @@ a:link {
     
 }
 
+.nav-links i {
+    font-size: 20pt;
+}
 .nav-links a {
     color: rgb(255, 253, 253);
 
-}
-.nav-menu {
-    display: grid;
-    grid-template-columns:  repeat(4, auto);
-    grid-gap: 10px;
-    list-style: none;
-    text-align: center;
-    width: 70vw;
-    justify-content: end;
-    margin-right: 2rem;
-    grid-area: menu;
 }
 
 .menu-icon {
@@ -84,6 +75,17 @@ a:link {
 
 @media screen and (max-width: 600px) {
 
+
+    .navbar-name {
+        vertical-align: center;
+        color: rgb(0, 0, 0) !important;
+        font-size: 50pt;
+        font-weight: 350;
+        justify-self: start;
+        width: auto;
+        text-align: center;
+        height: 100%;
+    }
     .nav-links a{
         color: black;
     }
@@ -95,13 +97,13 @@ a:link {
         -ms-transform: translateY(0);
         transform: translateY(0);
         display: flex;
-
+        text-align: center;
     }
     
     .navbar-name a{
         color: rgb(0, 0, 0) !important;
-     
     }
+
     .nav-menu {
         display: flex;
         flex-direction: column;

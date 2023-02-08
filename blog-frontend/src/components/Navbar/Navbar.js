@@ -2,7 +2,6 @@ import { UserContext } from '../../contexts/UserContext';
 import { Link } from "react-router-dom";
 import { useContext, useEffect, useState } from 'react';
 import './Navbar.css';
-import pic from './resized-SF-10.jpg';
 
 function Navbar( {handleLoginClick, setIsCreateAccount} ) {
 
@@ -38,10 +37,17 @@ function Navbar( {handleLoginClick, setIsCreateAccount} ) {
   return (
     <>
     <nav  className="navbar">
-     <div className='navbar-name font-face-gren'><div className='navbar-name-center'><Link to='/'>something<br />with<br /> ginger</Link></div></div>
-      <div><br/><br/></div>
-        {token ? ( <li className='nav-links' onClick={() => setMenuClicked(!menuClicked)}><Link to='/myprofile'>My Profile</Link></li>) : (<li className='nav-links' onClick={(handleClick)}><Link>Log In</Link></li>)  } 
-        {token ? ( <li className='nav-links' onClick={() => setMenuClicked(!menuClicked)}><Link to='/' onClick={Logout}>Logout ({user})</Link></li>) : ''}
+   
+    <li className='nav-links'><Link> <i class="fa-solid fa-pizza-slice"></i></Link></li>
+    <br/><br/><br/>
+      <li className='nav-links'><Link> <i class="fa-solid fa-motorcycle"></i></Link></li>
+      <br/><br/>
+
+     <div className='navbar-name font-face-gren'><Link to='/'>something<br />with<br /> ginger</Link></div>
+      <br/> <br/>
+
+        {token ? ( <li className='nav-links' onClick={() => setMenuClicked(!menuClicked)}><Link to='/myprofile'>my profile</Link></li>) : (<li className='nav-links' onClick={(handleClick)}><Link>login</Link></li>)  } 
+        {token ? ( <li className='nav-links' onClick={() => setMenuClicked(!menuClicked)}><Link to='/' onClick={Logout}>logout ({user})</Link></li>) : ''}
          
      
       {/* <nav className='navbar-image'>
