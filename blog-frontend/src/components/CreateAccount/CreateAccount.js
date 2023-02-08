@@ -45,7 +45,7 @@ function CreateAccount( {isCreateAccount, setIsCreateAccount, setIsShowLogin}) {
             {uniqueName ? '' : <label>Username already in use<br/></label>}
             <input type="password" placeholder="Password" onChange={(event) => setPassword(event.target.value)}></input>
             <br />
-            <button className='create-submit-btn' type="submit" onClick={CreateUser}>submit</button>
+            <button className='create-submit-btn' type="submit" onClick={CreateUser}>create</button>
           </div>
         </div>
       </div>

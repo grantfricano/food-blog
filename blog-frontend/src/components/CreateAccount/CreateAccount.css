@@ -13,7 +13,8 @@
   text-align: left;
   width: auto;
   height: auto;
-  background-color: rgba(175, 172, 172, 0.2);    
+  /* background-color: rgba(175, 172, 172, 0.2);     */
+  background-color: none;
   z-index: 2;
   text-align: center;
 }
@@ -24,14 +25,14 @@
   opacity: 1;
   position: relative;
   transform: translate(-50%, 1);
-  top: 60%;
+  top: 62%;
   left: auto;
 }
   
 .show-create.active-create {
   transform: translateX(-100%) scale(1);
   opacity: 0;
-  top: 60%;
+  top: 62%;
   left: auto;
 }
 

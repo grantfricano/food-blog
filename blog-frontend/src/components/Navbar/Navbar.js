@@ -45,7 +45,6 @@ function Navbar( {handleLoginClick, setIsCreateAccount} ) {
 
      <div className='navbar-name font-face-gren'><Link to='/'>something<br />with<br /> ginger</Link></div>
       <br/> <br/>
-
         {token ? ( <li className='nav-links' onClick={() => setMenuClicked(!menuClicked)}><Link to='/myprofile'>my profile</Link></li>) : (<li className='nav-links' onClick={(handleClick)}><Link>login</Link></li>)  } 
         {token ? ( <li className='nav-links' onClick={() => setMenuClicked(!menuClicked)}><Link to='/' onClick={Logout}>logout ({user})</Link></li>) : ''}
          

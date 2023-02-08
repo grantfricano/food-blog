@@ -60,7 +60,8 @@
   position: sticky;
   top: 0; 
   height: 97vh;
-  background-color:   #a1a1a1;
+  /* background-color:   #a1a1a1; */
+  background-color: #b06500;
   border: 10px white solid;
 }
 
