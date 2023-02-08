@@ -7,7 +7,7 @@ const authenticationRoutes = express.Router();
 authenticationRoutes.post('/', (req, res) => {
 
     User.findOne({username: {$eq: req.body.username}}, (err, user) => {
-        if (err) return res.send({message: 'there was an error1'});
+        if (err) return res.send({message: 'there was an error1' + err.message});
         
         if (!user) return res.send({message: 'user not found'});
 

@@ -6,65 +6,69 @@
     z-index: 2;
 }
 
+.login-textbox {
+  border: none;
+  line-height: 1.5;
+  outline: none;
+}
+
 .form-box {
-    opacity:100%;
-    /* background: url('test-collage.jpeg'); */
-    border-radius: 20px;
-    /* box-shadow: 10px 10px 10px 1px rgba(0, 0, 0, 0.2); */
-    color: white; 
-    margin: 0 auto;
-    width: auto;
+  opacity:100%;
+  /* background: url('test-collage.jpeg'); */
+  border-radius: 20px;
+  /* box-shadow: 10px 10px 10px 1px rgba(0, 0, 0, 0.2); */
+  color: white; 
+  margin: 0 auto; 
+  width: auto;
+  text-align: center;
+}
 
+.show {
+  display: block;
+  transition: 800ms;
+  opacity: 1;
+  position: relative;
+  transform: translate(-50%, 1);
+  top: 75%;
+  left: auto;
+}
   
-  }
+.show.active {
+  transform: translatey(100%) scale(1);
+  opacity: 0;
+  top: 80%;
+  left: auto;
+}
 
-  .show {
-    display: block;
-    transition: 800ms;
-    opacity: 1;
-    position: relative;
-    transform: translate(-50%, 1);
-    top: 75%;
-    left: auto;
+.submit-btn {
+  border: none;
+  margin-top: 10px;
+  line-height: 1.9;
+}
 
-  }
-  
-  .show.active {
-    transform: translatey(100%) scale(1);
-    opacity: 0;
-    top: 80%;
-    left: auto;
-  }
+.modal-links {
+  border-radius: 15px;
+}
 
-  .submit-btn {
-    border: none;
-    margin-top: 10px;
-    line-height: 1.9;
+.crt-forgot-links {
+  color: rgb(231, 229, 229);
+  white-space: nowrap;
+}
 
-  }
+.x-login {
+  float: right;
+  margin-right: 20px;
+  background-color: rgba(120, 116, 116, 0.713);
+  cursor: pointer;
+}
 
-  .modal-links {
-    border-radius: 15px;
-  }
+@media screen and (max-width: 960px) {
 
-  .crt-forgot-links {
-    color: rgb(231, 229, 229);
-    white-space: nowrap;
-  }
-
-  .x-login {
-    float: right;
-    margin-right: 20px;
-    background-color: rgba(120, 116, 116, 0.713);
-    cursor: pointer;
-  }
-  @media screen and (max-width: 960px) {
-
-    .form-box{
-        /* padding-right: 10vw;
-        padding-left: 10vw; */
-        background-color: gray;
-        width: 100vw;
-        height: 100vh;
-      }
-  }
+  .form-box{
+      /* padding-right: 10vw;
+      padding-left: 10vw; */
+      background-color: gray;
+      width: 100vw;
+      height: 100vh;
+    }
+}

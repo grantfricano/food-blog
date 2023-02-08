@@ -61,17 +61,18 @@ function Login( {isShowLogin, setIsShowLogin, setIsCreateAccount, setIsForgotPW}
                 <div className='form-box solid'>
                     {/* <i className='fa-solid fa-x x-login' onClick={() => setIsShowLogin(false)}></i> */}
                     <br />
-                    <input type="text" placeholder="username" onChange={(event) => setUserName(event.target.value)}/>
+                    <input type="text" className="login-textbox" placeholder="username" onChange={(event) => setUserName(event.target.value)}/>
                     <br />
                     {invalidUsername ? <label>invalid username<br/></label> : ''}
-                    <input type="password" placeholder="password" onChange={(event) => setPassword(event.target.value)} />
+                    <input type="password" className="login-textbox" placeholder="password" onChange={(event) => setPassword(event.target.value)} />
                     <br />
                     {invalidPassword ? <label>invalid password<br/></label> : ''}
                     <button className='submit-btn' type="submit" onClick={Authenticate}>submit</button>
                     <br />
+                    <br />
                     <div className='modal-links'>
                         <Link className='crt-forgot-links' onClick={handleCreateAccount}>create account </Link><br />
-                        <Link className='crt-forgot-links' onClick={handleForgotPW}>forgot password</Link>
+                        {/* <Link className='crt-forgot-links' onClick={handleForgotPW}>forgot password</Link> */}
                     </div>
                 </div>
             </div>
